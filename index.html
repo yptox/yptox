@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- *** UPDATED TITLE *** -->
+    <title>yptox.com</title>
+    <!-- *** FAVICON LINK *** -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Removed Google Fonts link -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="shader-canvas"></canvas>
+    <!-- Keep the fish! -->
+    <div class="custom-cat-cursor"></div>
+    <!-- Keep the cat cursor! -->
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">My Work</a></li>
+          <li><a href="#comments">Comments</a></li>
+          <li><a href="blog.html">The Daily Thing of The Day</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero">
+        <h1>yptox.com</h1>
+        <p>
+          This is my personal little website.S I am trying to make things, and I
+          would like to do it forever and ever
+        </p>
+        <!-- Fun lil' marquee -->
+        <marquee
+          behavior="scroll"
+          direction="left"
+          scrollamount="5"
+          style="margin-top: 15px; color: #ff00ff; font-weight: bold"
+          >please enjoy, have fun, and just do your best</marquee
+        >
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <h2>Ezra</h2>
+       
+        <p>
+          this is my spot to put things i make and share some of the things i enjoy and so on
+        </p>
+        <!-- Added Image -->
+        <img src="imagineAnything.jpg" alt="Imagine Anything" style="max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc;" width="400">
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>These are some things I like to do</h2>
+        <div class="project-grid">
+          <!-- Keep class for potential future styling, but CSS makes it stack -->
+          <!-- Project 1 -->
+          <div class="project-item">
+            <video
+              src="Framework Demo.mp4"
+              alt="Framework Demo"
+              style="max-width: 100%; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ccc;"
+              width="300"
+              loop
+              autoplay
+              muted
+            ></video>
+            <h3>Video</h3>
+            <p>
+            videos pretty good but theres more interesting things you can do really. i want to do more websites and games and crap
+            </p>
+            <a href="https://www.youtube.com/@yptox" target="_blank">youtube channel</a> 
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-item">
+            <video
+              src="Incrementelligence Demo.mp4"
+              alt="Incrementelligence Demo"
+              style="max-width: 100%; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ccc;"
+              width="300"
+              loop
+              autoplay
+              muted
+            ></video>
+            <h3>Games</h3>
+            <p>
+              Ive made no games really, i did a little incremental game for uni which was more of a proof of concept . i do love to game though and i want to make some kind of crapp xoxoxo
+            </p>
+            <a href="https://xenolotl.itch.io" target="_blank">itch.io page</a>
+          </div>
+
+          <!-- Add more project items here -->
+          <div class="project-item">
+            <img
+              src="horrendous incantations.gif"
+              alt="Horrendous Incantations GIF"
+              style="max-width: 100%; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ccc;"
+              width="300"
+            />
+            <h3>Curation</h3>
+            <p>
+            i want to share a daily thing of the day for every day - there are lots of things i love a lot and i want to put them on my web site. i hope that is ok with you.
+            </p>
+            <a href="blog.html" target="_blank">The Daily Thing of The Day</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comments/Guestbook Section -->
+      <section id="comments">
+        <!-- Changed ID to match nav link -->
+        <h2>Comments</h2>
+        <p>Thoughts?</p>
+        <form id="comment-form">
+          <div class="form-group">
+            <label for="comment-name">Name:</label>
+            <input type="text" id="comment-name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="comment-text">Message:</label>
+            <!-- Changed label -->
+            <textarea
+              id="comment-text"
+              name="comment"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">leave comment</button>
+          <!-- Changed button text -->
+        </form>
+
+        <div id="comments-list">
+          <!-- Comments will load here -->
+          <p>Loading comments...</p>
+        </div>
+
+        <!-- Optional: Keep social links if desired -->
+        <hr style="margin: 30px 0; border: none; border-top: 1px dashed #999" />
+        <p style="text-align: center">bye bye</p>
+
+          </li>
+          <!-- Add other links -->
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>i love youy!</p>
+    </footer>
+
+    <!-- Keep the script, it handles comments, cursor, etc. -->
+    <script src="script.js"></script>
+  </body>
+</html>

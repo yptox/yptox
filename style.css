@@ -1,0 +1,288 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Canvas Styling - Keep behind content */
+#shader-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place canvas behind everything */
+  display: block;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif; /* Classic serif font */
+  line-height: 1.6;
+  background-color: #f0f0f0; /* Light grey background */
+  color: #000000; /* Black text */
+  padding: 20px; /* Add some padding around the content */
+  position: relative; /* Needed for z-index stacking */
+  z-index: 1; /* Ensure body content is above canvas */
+  cursor: none; /* Hide default cursor for custom one */
+}
+
+/* Simple Header */
+header {
+  padding: 10px 0;
+  border-bottom: 2px solid #000000; /* Classic solid border */
+  margin-bottom: 20px;
+  background-color: #f0f0f0; /* Match body background */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Center nav items */
+}
+
+header nav li {
+  display: inline; /* Make nav items inline */
+  margin: 0 15px; /* Space between items */
+}
+
+header nav a {
+  color: #0000ff; /* Classic blue link color */
+  font-weight: bold;
+  text-decoration: underline; /* Classic underline */
+}
+
+header nav a:hover,
+header nav a.active {
+  color: #ff0000; /* Red hover/active color */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+main {
+  /* No specific padding needed if body has padding */
+}
+
+footer {
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 30px;
+  color: #555555; /* Grey footer text */
+  border-top: 2px solid #000000; /* Classic solid border */
+  font-size: 0.9em;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #cccccc; /* Simple border for sections */
+  background-color: #ffffff; /* White background for content readability */
+  /* border-radius: 8px; */ /* Removed rounded corners */
+  /* Remove modern transitions/animations */
+  /* opacity: 1; */
+  /* transform: none; */
+  /* transition: none; */
+}
+
+/* Keep hero section transparent if desired, or give it a background */
+#hero {
+  background-color: transparent; /* Or #ffffff if needed */
+  border: none; /* Remove border for hero if transparent */
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 15px;
+  color: #000000; /* Black headings */
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.2em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.6em;
+  border-bottom: 1px dashed #999999; /* Dashed underline for H2 */
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+a {
+  color: #0000ff; /* Classic blue */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ff0000; /* Red hover */
+}
+
+/* Project Showcase - Simple stacked layout */
+.project-grid {
+  /* Remove grid layout */
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* gap: 30px; */
+}
+
+.project-item {
+  border: 1px solid #dddddd; /* Lighter border for items */
+  padding: 15px;
+  margin-bottom: 20px; /* Space between stacked items */
+  background-color: #fafafa; /* Slightly off-white background */
+  /* border-radius: 5px; */ /* Removed rounded corners */
+  /* Remove hover effects */
+  /* transition: none; */
+  /* transform: none; */
+}
+
+.project-item img {
+  max-width: 100%; /* Make images responsive */
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc; /* Border around images */
+}
+
+.project-item h3 {
+  margin-bottom: 5px;
+}
+
+.project-item p {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+/* Contact/Links List */
+#contact ul {
+  list-style: square; /* Classic square bullets */
+  padding-left: 20px; /* Indent list */
+  margin-top: 10px;
+}
+
+#contact li {
+  margin-bottom: 8px;
+}
+
+/* Custom Cat Cursor Style - Keep as is */
+.custom-cat-cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-image: url("favicon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Retro Comment Form Styles */
+#comment-form {
+  border: 2px inset #cccccc; /* Classic inset border */
+  padding: 15px;
+  background-color: #e0e0e0; /* Slightly different background */
+  /* border-radius: 5px; */ /* Removed rounded corners */
+}
+
+#comment-form .form-group {
+  margin-bottom: 10px;
+}
+
+#comment-form label {
+  display: inline-block; /* Labels next to inputs */
+  width: 80px; /* Fixed width for labels */
+  font-weight: bold;
+  margin-right: 10px;
+  vertical-align: top; /* Align labels with top of textarea */
+}
+
+#comment-form input[type="text"],
+#comment-form textarea {
+  padding: 5px;
+  border: 1px solid #000000; /* Solid black border */
+  background-color: #ffffff; /* White input background */
+  color: #000000; /* Black text */
+  font-family: "Courier New", Courier, monospace; /* Monospace font for inputs */
+  width: calc(100% - 100px); /* Adjust width to fit next to label */
+  display: inline-block;
+  /* border-radius: 3px; */ /* Removed rounded corners */
+}
+
+#comment-form textarea {
+  resize: vertical;
+  min-height: 60px; /* Minimum height for textarea */
+  vertical-align: top;
+}
+
+#comment-form button {
+  padding: 5px 15px;
+  background-color: #cccccc; /* Grey button */
+  color: #000000;
+  border: 2px outset #aaaaaa; /* Classic outset border */
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 90px; /* Align button with inputs */
+  margin-top: 10px;
+  /* border-radius: 4px; */ /* Removed rounded corners */
+}
+
+#comment-form button:hover {
+  background-color: #bbbbbb; /* Slightly darker grey on hover */
+}
+
+#comment-form button:active {
+  border-style: inset; /* Inset border when clicked */
+}
+
+/* Retro Styles for displayed comments */
+#comments-list {
+  margin-top: 20px;
+  border: 1px solid #aaaaaa;
+  padding: 10px;
+  background-color: #ffffff;
+  max-height: 300px; /* Limit height and add scroll */
+  overflow-y: auto; /* Add scrollbar if needed */
+  font-size: 0.9em;
+  /* border-radius: 5px; */ /* Removed rounded corners */
+}
+
+#comments-list .comment {
+  border-bottom: 1px dashed #cccccc; /* Dashed separator */
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+
+#comments-list .comment:last-child {
+  border-bottom: none; /* No border for the last comment */
+}
+
+#comments-list .comment strong {
+  display: inline; /* Name on same line */
+  margin-right: 5px;
+  color: #00008b; /* Dark blue for name */
+}
+
+#comments-list .comment p {
+  display: inline; /* Comment text on same line */
+  margin: 0;
+}
+
+#comments-list .comment span {
+  /* Timestamp style */
+  font-size: 0.8em;
+  color: #666666;
+  margin-left: 10px;
+  font-style: italic;
+}
+
+/* Remove Random Text Styling if not desired */
+.random-text-target {
+  /* Optional: Add specific styling or remove if effect is disabled */
+}
