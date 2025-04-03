@@ -1,9 +1,0 @@
-# Ignore large media files
-*.gif
-*.mp4
-*.jpg
-
-# Standard ignore patterns
-node_modules/
-.env
-.DS_Store
