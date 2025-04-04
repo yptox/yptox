@@ -11,19 +11,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Canvas moved behind content via CSS (position: fixed, z-index: -1) -->
     <canvas id="shader-canvas"></canvas>
-    <!-- Keep the fish! -->
-    <div class="custom-cat-cursor"></div>
     <!-- Keep the cat cursor! -->
+    <div class="custom-cat-cursor"></div>
 
     <header>
       <nav>
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">My Work</a></li>
-          <li><a href="#comments">Comments</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="blog.html">The Daily Thing of The Day</a></li>
+          <li><a href="creation-log.html">Creation Log</a></li>
         </ul>
       </nav>
     </header>
@@ -33,8 +31,8 @@
       <section id="hero">
         <h1>yptox.com</h1>
         <p>
-          This is my personal little website.S I am trying to make things, and I
-          would like to do it forever and ever
+          This is my personal little website. I am trying to make things, and I
+          would like to do it forever and ever ideally
         </p>
         <!-- Fun lil' marquee -->
         <marquee
@@ -49,12 +47,21 @@
       <!-- About Section -->
       <section id="about">
         <h2>Ezra</h2>
-       
-        <p>
-          this is my spot to put things i make and share some of the things i enjoy and so on
-        </p>
+
+        <p>Ezra Johnston is a neat little freak</p>
         <!-- Added Image -->
-        <img src="imagineAnything.jpg" alt="Imagine Anything" style="max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc;" width="400">
+        <img
+          src="imagineAnything.jpg"
+          alt="Imagine Anything"
+          style="
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border: 1px solid #ccc;
+          "
+          width="400"
+        />
       </section>
 
       <!-- Projects Section -->
@@ -67,17 +74,26 @@
             <video
               src="Framework Demo.mp4"
               alt="Framework Demo"
-              style="max-width: 100%; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ccc;"
-              width="300"
+              style="
+                max-width: 100%;
+                height: 300px;
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                object-fit: cover;
+              "
               loop
               autoplay
               muted
             ></video>
             <h3>Video</h3>
             <p>
-            videos pretty good but theres more interesting things you can do really. i want to do more websites and games and crap
+              videos pretty good but theres more interesting things you can do
+              really. i want to do more websites and games and crap
             </p>
-            <a href="https://www.youtube.com/@yptox" target="_blank">youtube channel</a> 
+            <a href="https://www.youtube.com/@yptox" target="_blank"
+              >youtube channel</a
+            >
           </div>
 
           <!-- Project 2 -->
@@ -85,15 +101,23 @@
             <video
               src="Incrementelligence Demo.mp4"
               alt="Incrementelligence Demo"
-              style="max-width: 100%; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ccc;"
-              width="300"
+              style="
+                max-width: 100%;
+                height: 300px;
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                object-fit: cover;
+              "
               loop
               autoplay
               muted
             ></video>
             <h3>Games</h3>
             <p>
-              Ive made no games really, i did a little incremental game for uni which was more of a proof of concept . i do love to game though and i want to make some kind of crapp xoxoxo
+              Ive made no games really, i did a little incremental game for uni
+              which was more of a proof of concept . i do love to game though
+              and i want to make some kind of crapp xoxoxo
             </p>
             <a href="https://xenolotl.itch.io" target="_blank">itch.io page</a>
           </div>
@@ -103,12 +127,20 @@
             <img
               src="horrendous incantations.gif"
               alt="Horrendous Incantations GIF"
-              style="max-width: 100%; height: auto; display: block; margin-bottom: 10px; border: 1px solid #ccc;"
+              style="
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+              "
               width="300"
             />
             <h3>Curation</h3>
             <p>
-            i want to share a daily thing of the day for every day - there are lots of things i love a lot and i want to put them on my web site. i hope that is ok with you.
+              i want to share a daily thing of the day for every day - there are
+              lots of things i love a lot and i want to put them on my web site.
+              i hope that is ok with you.
             </p>
             <a href="blog.html" target="_blank">The Daily Thing of The Day</a>
           </div>
@@ -148,9 +180,7 @@
         <hr style="margin: 30px 0; border: none; border-top: 1px dashed #999" />
         <p style="text-align: center">bye bye</p>
 
-          </li>
-          <!-- Add other links -->
-        </ul>
+        <!-- Stray tags removed from here -->
       </section>
     </main>
 

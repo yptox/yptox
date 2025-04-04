@@ -9,6 +9,7 @@ interface Comment {
   name: string;
   comment: string;
   timestamp: string;
+  pageId: string; // Add pageId property
 }
 
 // --- Helper Function to Read Comments ---
@@ -50,8 +51,12 @@ serve(async (request: Request) => {
 
   // --- API Endpoints ---
   if (pathname === "/comments" && request.method === "GET") {
+    const pageId = url.searchParams.get("pageId");
     const comments = await readComments();
-    return new Response(JSON.stringify(comments), {
+    const filteredComments = comments.filter(
+      (comment) => comment.pageId === pageId
+    );
+    return new Response(JSON.stringify(filteredComments), {
       headers: {
         "content-type": "application/json",
         "Access-Control-Allow-Origin": "*", // Allow requests from frontend
@@ -65,8 +70,14 @@ serve(async (request: Request) => {
       const newCommentData = await request.json();
 
       // Basic validation
-      if (!newCommentData.name || !newCommentData.comment) {
-        return new Response("Missing name or comment", { status: 400 });
+      if (
+        !newCommentData.name ||
+        !newCommentData.comment ||
+        !newCommentData.pageId
+      ) {
+        return new Response("Missing name, comment, or pageId", {
+          status: 400,
+        });
       }
 
       const comments = await readComments();
@@ -75,6 +86,7 @@ serve(async (request: Request) => {
         name: String(newCommentData.name).trim(), // Basic sanitization/trimming
         comment: String(newCommentData.comment).trim(),
         timestamp: new Date().toISOString(),
+        pageId: String(newCommentData.pageId).trim(), // Store pageId with the comment
       };
 
       comments.push(newComment);

@@ -1,3 +1,4 @@
+// script.js: (CSS Background Version)
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Portfolio script loaded.");
 
@@ -11,89 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ? commentForm.querySelector('button[type="submit"]')
     : null; // Get submit button
 
-  // --- New Canvas Background ---
-  const canvas = document.getElementById("shader-canvas");
-  let ctx;
-  let animationFrameId;
-
-  function resizeCanvas() {
-    if (!canvas) return;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    // No need to redraw immediately on resize, animation loop handles it
-  }
-
-  // Revised lightweight scrolling stripes pattern (Dark Purple/Blue, Seamless)
-  function drawPattern(time) {
-    if (!ctx) return;
-    const width = canvas.width;
-    const height = canvas.height;
-
-    // Base background color
-    ctx.fillStyle = "#101020"; // Very dark blue/purple base
-    ctx.fillRect(0, 0, width, height);
-
-    const stripeWidth = 120; // Width of each stripe
-    const speed = 30; // Pixels per second scroll speed
-
-    // Calculate scroll offset based on time, wrapping around the stripe width for seamlessness
-    const scrollOffset = ((time * speed) / 1000) % stripeWidth;
-
-    // Calculate the number of stripes needed to cover the screen plus one extra for overlap
-    const numStripes = Math.ceil(width / stripeWidth) + 1;
-
-    for (let i = 0; i < numStripes; i++) {
-      // Calculate the starting x position for this stripe, adjusted by the scroll offset.
-      // Start drawing from -scrollOffset to cover the left edge as stripes move left.
-      const x = i * stripeWidth - scrollOffset;
-
-      // Create a vertical gradient for each stripe
-      const gradient = ctx.createLinearGradient(x, 0, x, height);
-
-      // Define gradient colors: Fixed Dark Purples and Blues
-      // Alternating pattern for simplicity
-      const color1 =
-        i % 2 === 0 ? "hsla(260, 50%, 20%, 0.7)" : "hsla(240, 50%, 25%, 0.7)"; // Dark Purple / Dark Blue
-      const color2 =
-        i % 2 === 0 ? "hsla(250, 55%, 30%, 0.8)" : "hsla(230, 55%, 35%, 0.8)"; // Slightly Lighter Purple / Blue
-
-      gradient.addColorStop(0, color1);
-      gradient.addColorStop(0.5, color2);
-      gradient.addColorStop(1, color1);
-
-      ctx.fillStyle = gradient;
-      ctx.fillRect(x, 0, stripeWidth, height); // Draw the stripe
-    }
-
-    // Request the next frame
-    animationFrameId = requestAnimationFrame(drawPattern);
-  }
-
-  function initCanvasBackground() {
-    if (!canvas) {
-      console.warn("Canvas element #shader-canvas not found for pattern.");
-      return;
-    }
-    ctx = canvas.getContext("2d");
-    if (!ctx) {
-      console.error("Could not get 2D context for canvas.");
-      canvas.style.display = "none"; // Hide canvas if context fails
-      document.body.style.backgroundColor = "#1a001a"; // Fallback
-      return;
-    }
-
-    resizeCanvas(); // Initial size
-    window.addEventListener("resize", resizeCanvas);
-
-    // Stop previous animation if any
-    if (animationFrameId) {
-      cancelAnimationFrame(animationFrameId);
-    }
-    // Start the animation
-    animationFrameId = requestAnimationFrame(drawPattern);
-    console.log("Initialized 2D canvas pattern background.");
-  }
-  // --- End New Canvas Background ---
+  // --- Canvas Background Code REMOVED ---
 
   // Random Text Logic (Disabled)
   /*
@@ -147,19 +66,26 @@ document.addEventListener("DOMContentLoaded", () => {
     commentDiv.appendChild(nameStrong);
     commentDiv.appendChild(commentP);
 
+    // Check if the placeholder "yerp" exists and remove it
+    const placeholder = commentsList.querySelector("p > i");
+    if (placeholder && placeholder.textContent === "yerp") {
+      commentsList.innerHTML = ""; // Clear the placeholder
+    }
+
     // Add to the top of the list (newest first - guestbook style)
     commentsList.prepend(commentDiv);
-    // Or add to the bottom (oldest first)
-    // commentsList.appendChild(commentDiv);
   }
 
   // Function to fetch and display all comments
   async function loadComments() {
     if (!commentsList) return;
     console.log("Loading comments...");
-    // Keep the "Loading..." message initially present in HTML
+    commentsList.innerHTML = "<p><i>Loading...</i></p>"; // Explicit loading message
     try {
-      const response = await fetch("/comments"); // Fetch from Deno backend
+      const pageId = window.location.pathname; // Get the current page's URL path
+      const response = await fetch(
+        `/comments?pageId=${encodeURIComponent(pageId)}`
+      ); // Fetch comments for the current page
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -175,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`Loaded ${comments.length} comments.`);
       } else if (Array.isArray(comments) && comments.length === 0) {
         // Handle case where comments array is empty
-        commentsList.innerHTML = "<p><i>yerp</i></p>";
+        commentsList.innerHTML = "<p><i>yerp</i></p>"; // Your placeholder
         console.log("No comments found.");
       } else {
         // Handle unexpected non-array response
@@ -198,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const name = nameInput.value.trim();
       const commentText = commentInput.value.trim();
+      const pageId = window.location.pathname; // Get the current page's URL path
 
       if (name && commentText) {
         const originalButtonText = submitButton.textContent; // Store original text
@@ -211,7 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name: name, comment: commentText }),
+            body: JSON.stringify({
+              name: name,
+              comment: commentText,
+              pageId: pageId,
+            }),
           });
 
           if (!response.ok) {
@@ -221,20 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
             );
           }
 
-          // Option 1: Add the new comment directly for instant feedback (using prepend)
+          // Add the new comment directly using the function which handles placeholder removal
           const newComment = await response.json();
           addCommentToDOM(newComment);
-          // Remove the "Be the first..." message if it exists
-          const firstMessage = commentsList.querySelector("p > i");
-          if (
-            firstMessage &&
-            firstMessage.textContent === "Be the first to sign the guestbook!"
-          ) {
-            firstMessage.parentElement.remove();
-          }
-
-          // Option 2: Reload all comments to ensure consistency (alternative)
-          // await loadComments();
 
           // Clear the form
           nameInput.value = "";
@@ -278,18 +198,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   */
 
-  // Custom Cursor Logic (Keep this!)
-  const catCursor = document.querySelector(".custom-cat-cursor");
-  if (catCursor) {
-    window.addEventListener("mousemove", (e) => {
-      const posX = e.clientX;
-      const posY = e.clientY;
-      catCursor.style.left = `${posX}px`;
-      catCursor.style.top = `${posY}px`;
+  /* Commented out custom cursor - to be reimplemented later
+  const cursor = document.querySelector(".custom-cat-cursor");
+  if (cursor) {
+    document.body.style.cursor = "none";
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX - 16 + "px";
+      cursor.style.top = e.clientY - 16 + "px";
     });
-  } else {
-    console.warn("Custom cat cursor element (.custom-cat-cursor) not found.");
   }
+  */
 
   // Smooth Scrolling & Active Nav Link (Disabled)
   /*
@@ -344,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
   */
 
   // --- Initializations ---
-  initCanvasBackground(); // Initialize the new canvas background
   loadComments(); // Load existing comments when the page loads
   // highlightNav(); // Initial nav highlighting (Disabled)
+  // No need to initialize canvas background anymore
 }); // End DOMContentLoaded
