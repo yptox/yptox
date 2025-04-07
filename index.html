@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>yptox.com</title>
+    <!-- Make sure this is specific for other pages too! -->
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <canvas id="shader-canvas"></canvas>
-    <div class="custom-cat-cursor"></div>
+  <body class="index-page">
+    <!-- Added class for potential specific index styling -->
+    <!-- Removed canvas, assuming it's not essential or handled elsewhere -->
+    <!-- Removed custom cursor div, keep if you reimplement the JS -->
 
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <!-- Add 'active' class dynamically if needed, or handle via JS -->
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="blog.html">The Daily Thing of The Day</a></li>
           <li><a href="creation-log.html">Creation Log</a></li>
         </ul>
@@ -62,7 +65,7 @@
         <div class="project-grid">
           <!-- Project 1 -->
           <div class="project-item">
-             <video
+            <video
               src="Framework Demo.mp4"
               alt="Framework Demo"
               style="
@@ -113,7 +116,7 @@
           </div>
           <!-- Project 3 -->
           <div class="project-item">
-             <img
+            <img
               src="horrendous incantations.gif"
               alt="Horrendous Incantations GIF"
               style="
@@ -138,47 +141,72 @@
 
       <!-- Comments/Guestbook Section -->
       <section id="comments">
-        <h2>Comments</h2>
-        <p>Thoughts?</p>
-
-        <!-- REMOVED Old Comment Form and List -->
+        <h2>Comments / Guestbook</h2>
+        <!-- Changed title slightly -->
+        <p>Leave a thought!</p>
+        <!-- Optional: Keep or remove -->
 
         <!-- === START CUSDIS EMBED === -->
-        <div id="cusdis_thread"
+        <div
+          id="cusdis_thread"
           data-host="https://cusdis.com"
           data-app-id="472395f5-db90-4009-b575-4dea9002c1bb"
-          <!-- Attributes below are set by the script -->
-          data-page-id=""
-          data-page-url=""
-          data-page-title=""
-        ></div>
+          <!--
+          The
+          data-page-*
+          attributes
+          below
+          will
+          be
+          set
+          by
+          the
+          script
+          --
+        >
+          data-page-id="" data-page-url="" data-page-title="" >
+        </div>
 
         <!-- Script to dynamically set Cusdis attributes -->
         <script>
-          var cusdisThread = document.getElementById('cusdis_thread');
-          if (cusdisThread) {
-            // Use the page's path as a unique ID. Handles different pages like /index.html, /blog.html etc.
-            // If URL is just 'yptox.com/', pathname might be '/', adjust if needed.
-            var pageId = window.location.pathname;
-            // Ensure root path '/' still gets a meaningful ID if desired
-            if (pageId === '/') {
-                pageId = '/index.html'; // Or just 'home', or keep '/'
-            }
+          (function () {
+            // Use an IIFE to avoid polluting global scope
+            var cusdisThread = document.getElementById("cusdis_thread");
+            if (cusdisThread) {
+              // Use the page's path as a unique ID. Handles different pages.
+              // e.g., '/', '/index.html', '/blog.html', '/creation-log.html'
+              var pageId = window.location.pathname;
 
-            cusdisThread.setAttribute('data-page-id', pageId);
-            cusdisThread.setAttribute('data-page-url', window.location.href);
-            cusdisThread.setAttribute('data-page-title', document.title);
-          }
+              // Optional: If you want the root path '/' and '/index.html'
+              // to share the same comment thread, normalize the ID.
+              // if (pageId === '/' || pageId === '/index.html') {
+              //     pageId = '/'; // Or '/home' or similar unique identifier
+              // }
+              // Using pathname directly is usually fine and separates comments cleanly.
+
+              var pageUrl = window.location.href;
+              var pageTitle = document.title; // Gets the title from the <title> tag
+
+              cusdisThread.setAttribute("data-page-id", pageId);
+              cusdisThread.setAttribute("data-page-url", pageUrl);
+              cusdisThread.setAttribute("data-page-title", pageTitle);
+
+              // console.log('Cusdis Attributes Set:'); // Optional: for debugging
+              // console.log('ID:', pageId);
+              // console.log('URL:', pageUrl);
+              // console.log('Title:', pageTitle);
+            } else {
+              console.error("Cusdis thread element not found.");
+            }
+          })(); // Immediately invoke the function
         </script>
 
-        <!-- Load the main Cusdis script *AFTER* attributes are set -->
+        <!-- Load the main Cusdis script *AFTER* the attributes are set -->
         <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
         <!-- === END CUSDIS EMBED === -->
 
-
         <hr style="margin: 30px 0; border: none; border-top: 1px dashed #999" />
         <p style="text-align: center">bye bye</p>
-
       </section>
     </main>
 
@@ -186,7 +214,8 @@
       <p>i love youy!</p>
     </footer>
 
-    <!-- Ensure script.js is still linked if it contains non-comment JS -->
-    <script src="script.js"></script>
+    <!-- Ensure script.js is linked if it contains other necessary JS -->
+    <!-- <script src="script.js"></script> -->
+    <!-- If script.js is truly empty or only had comments stuff, you can remove this link -->
   </body>
 </html>

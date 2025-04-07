@@ -99,7 +99,7 @@ body:not(.index-page) header {
 
 /* Add margin to main content only when header is fixed */
 body:not(.index-page) main {
-  margin-top: 60px;
+  margin-top: 60px; /* Adjust this value based on your actual header height */
 }
 
 header nav ul {
@@ -148,12 +148,16 @@ section {
   padding: 20px;
   border: 1px solid #cccccc;
   background-color: #ffffff;
+  max-width: 960px; /* Optional: Constrain width for readability */
+  margin-left: auto; /* Center sections if max-width is set */
+  margin-right: auto; /* Center sections if max-width is set */
 }
 
 #hero {
   background-color: #f8f8f8;
   border: 1px solid #cccccc;
   text-align: center;
+  max-width: 100%; /* Hero might want full width */
 }
 
 h1,
@@ -186,22 +190,37 @@ a:hover {
 }
 
 .project-grid {
-  /* Remains commented out */
+  /* Consider using CSS Grid or Flexbox for layout if needed */
+  display: grid; /* Example using Grid */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive columns */
+  gap: 20px;
 }
 
 .project-item {
   border: 1px solid #dddddd;
   padding: 15px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; REMOVED - handled by grid gap */
   background-color: #fafafa;
+  display: flex; /* Flexbox for better internal alignment */
+  flex-direction: column;
 }
 
-.project-item img {
+.project-item img,
+.project-item video {
+  /* Apply common styles to both */
   max-width: 100%;
-  height: auto;
+  height: auto; /* Adjust if fixed height is desired */
   display: block;
   margin-bottom: 10px;
   border: 1px solid #cccccc;
+}
+
+.project-item video {
+  height: 300px; /* Keep specific height for videos if needed */
+  object-fit: cover;
 }
 
 .project-item h3 {
@@ -210,9 +229,15 @@ a:hover {
 .project-item p {
   margin-bottom: 10px;
   font-size: 0.95em;
+  flex-grow: 1; /* Makes text take available space */
+}
+
+.project-item a {
+  margin-top: auto; /* Pushes link to the bottom */
 }
 
 #contact ul {
+  /* Assuming you might add a contact section later */
   list-style: square;
   padding-left: 20px;
   margin-top: 10px;
@@ -233,87 +258,8 @@ a:hover {
 }
 */
 
-/* --- Comment Styles (Unchanged) --- */
-
-#comment-form {
-  border: 2px inset #cccccc;
-  padding: 15px;
-  background-color: #e0e0e0;
-}
-#comment-form .form-group {
-  margin-bottom: 10px;
-}
-#comment-form label {
-  display: inline-block;
-  width: 80px;
-  font-weight: bold;
-  margin-right: 10px;
-  vertical-align: top;
-}
-#comment-form input[type="text"],
-#comment-form textarea {
-  padding: 5px;
-  border: 1px solid #000000;
-  background-color: #ffffff;
-  color: #000000;
-  font-family: "Courier New", Courier, monospace;
-  width: calc(100% - 100px);
-  display: inline-block;
-}
-#comment-form textarea {
-  resize: vertical;
-  min-height: 60px;
-  vertical-align: top;
-}
-#comment-form button {
-  padding: 5px 15px;
-  background-color: #cccccc;
-  color: #000000;
-  border: 2px outset #aaaaaa;
-  cursor: pointer;
-  font-weight: bold;
-  margin-left: 90px;
-  margin-top: 10px;
-}
-#comment-form button:hover {
-  background-color: #bbbbbb;
-}
-#comment-form button:active {
-  border-style: inset;
-}
-
-#comments-list {
-  margin-top: 20px;
-  border: 1px solid #aaaaaa;
-  padding: 10px;
-  background-color: #ffffff;
-  max-height: 300px;
-  overflow-y: auto;
-  font-size: 0.9em;
-}
-#comments-list .comment {
-  border-bottom: 1px dashed #cccccc;
-  padding: 8px 0;
-  margin-bottom: 8px;
-}
-#comments-list .comment:last-child {
-  border-bottom: none;
-}
-#comments-list .comment strong {
-  display: inline;
-  margin-right: 5px;
-  color: #00008b;
-}
-#comments-list .comment p {
-  display: inline;
-  margin: 0;
-}
-#comments-list .comment span {
-  font-size: 0.8em;
-  color: #666666;
-  margin-left: 10px;
-  font-style: italic;
-}
+/* --- Comment Styles REMOVED --- */
+/* The old #comment-form and #comments-list styles were here */
 
 .random-text-target {
   /* Optional */
@@ -331,4 +277,9 @@ a:hover {
   margin-top: 0;
   border-bottom: 1px dashed #999999;
   padding-bottom: 5px;
+}
+
+/* Add some padding around main content */
+main {
+  padding: 20px;
 }
