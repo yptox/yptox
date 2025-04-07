@@ -3,17 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- *** UPDATED TITLE *** -->
     <title>yptox.com</title>
-    <!-- *** FAVICON LINK *** -->
     <link rel="icon" type="image/png" href="favicon.png" />
-    <!-- Removed Google Fonts link -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Canvas moved behind content via CSS (position: fixed, z-index: -1) -->
     <canvas id="shader-canvas"></canvas>
-    <!-- Keep the cat cursor! -->
     <div class="custom-cat-cursor"></div>
 
     <header>
@@ -34,7 +29,6 @@
           This is my personal little website. I am trying to make things, and I
           would like to do it forever and ever ideally
         </p>
-        <!-- Fun lil' marquee -->
         <marquee
           behavior="scroll"
           direction="left"
@@ -47,9 +41,7 @@
       <!-- About Section -->
       <section id="about">
         <h2>Ezra</h2>
-
         <p>Ezra Johnston is a neat little freak</p>
-        <!-- Added Image -->
         <img
           src="imagineAnything.jpg"
           alt="Imagine Anything"
@@ -68,10 +60,9 @@
       <section id="projects">
         <h2>These are some things I like to do</h2>
         <div class="project-grid">
-          <!-- Keep class for potential future styling, but CSS makes it stack -->
           <!-- Project 1 -->
           <div class="project-item">
-            <video
+             <video
               src="Framework Demo.mp4"
               alt="Framework Demo"
               style="
@@ -95,7 +86,6 @@
               >youtube channel</a
             >
           </div>
-
           <!-- Project 2 -->
           <div class="project-item">
             <video
@@ -121,10 +111,9 @@
             </p>
             <a href="https://xenolotl.itch.io" target="_blank">itch.io page</a>
           </div>
-
-          <!-- Add more project items here -->
+          <!-- Project 3 -->
           <div class="project-item">
-            <img
+             <img
               src="horrendous incantations.gif"
               alt="Horrendous Incantations GIF"
               style="
@@ -149,38 +138,47 @@
 
       <!-- Comments/Guestbook Section -->
       <section id="comments">
-        <!-- Changed ID to match nav link -->
         <h2>Comments</h2>
         <p>Thoughts?</p>
-        <form id="comment-form">
-          <div class="form-group">
-            <label for="comment-name">Name:</label>
-            <input type="text" id="comment-name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="comment-text">Message:</label>
-            <!-- Changed label -->
-            <textarea
-              id="comment-text"
-              name="comment"
-              rows="4"
-              required
-            ></textarea>
-          </div>
-          <button type="submit">leave comment</button>
-          <!-- Changed button text -->
-        </form>
 
-        <div id="comments-list">
-          <!-- Comments will load here -->
-          <p>Loading comments...</p>
-        </div>
+        <!-- REMOVED Old Comment Form and List -->
 
-        <!-- Optional: Keep social links if desired -->
+        <!-- === START CUSDIS EMBED === -->
+        <div id="cusdis_thread"
+          data-host="https://cusdis.com"
+          data-app-id="472395f5-db90-4009-b575-4dea9002c1bb"
+          <!-- Attributes below are set by the script -->
+          data-page-id=""
+          data-page-url=""
+          data-page-title=""
+        ></div>
+
+        <!-- Script to dynamically set Cusdis attributes -->
+        <script>
+          var cusdisThread = document.getElementById('cusdis_thread');
+          if (cusdisThread) {
+            // Use the page's path as a unique ID. Handles different pages like /index.html, /blog.html etc.
+            // If URL is just 'yptox.com/', pathname might be '/', adjust if needed.
+            var pageId = window.location.pathname;
+            // Ensure root path '/' still gets a meaningful ID if desired
+            if (pageId === '/') {
+                pageId = '/index.html'; // Or just 'home', or keep '/'
+            }
+
+            cusdisThread.setAttribute('data-page-id', pageId);
+            cusdisThread.setAttribute('data-page-url', window.location.href);
+            cusdisThread.setAttribute('data-page-title', document.title);
+          }
+        </script>
+
+        <!-- Load the main Cusdis script *AFTER* attributes are set -->
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+        <!-- === END CUSDIS EMBED === -->
+
+
         <hr style="margin: 30px 0; border: none; border-top: 1px dashed #999" />
         <p style="text-align: center">bye bye</p>
 
-        <!-- Stray tags removed from here -->
       </section>
     </main>
 
@@ -188,7 +186,7 @@
       <p>i love youy!</p>
     </footer>
 
-    <!-- Keep the script, it handles comments, cursor, etc. -->
+    <!-- Ensure script.js is still linked if it contains non-comment JS -->
     <script src="script.js"></script>
   </body>
 </html>
