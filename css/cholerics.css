@@ -1,0 +1,67 @@
+/* --- CHOLERICS SHOWCASE PAGE SPECIFIC LAYOUTS --- */
+
+.page-project-detail .showcase-layout-item {
+    margin-bottom: 40px;
+}
+.page-project-detail .media-item {
+    width: 100%;
+    display: block;
+    border: 2px dashed var(--fg-color);
+    object-fit: cover;
+}
+.page-project-detail .showcase-layout-item.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center; /* CHANGED back to 'center' for vertical alignment */
+}
+.page-project-detail .showcase-layout-item.two-column-reversed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center; /* CHANGED back to 'center' for vertical alignment */
+}
+
+/* New utility class for adding top margin */
+.page-project-detail .mt-large {
+    margin-top: 80px;
+}
+
+.page-project-detail .showcase-layout-item .column-item h4 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.page-project-detail .text-block { 
+    border: 2px dashed var(--fg-color); 
+    padding: 20px; 
+    margin-top: 25px; 
+}
+.page-project-detail .text-block h4 { 
+    font-size: 1.5rem; 
+}
+.page-project-detail .text-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+.page-project-detail .text-block li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+.page-project-detail .text-block li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* --- CHOLERICS RESPONSIVE OVERRIDES --- */
+@media (max-width: 992px) {
+    .page-project-detail .showcase-layout-item.two-column,
+    .page-project-detail .showcase-layout-item.two-column-reversed { 
+        grid-template-columns: 1fr; 
+    }
+    .page-project-detail .showcase-layout-item.two-column-reversed .column-item:first-child {
+        order: 2; /* Flips the order on mobile */
+    }
+}

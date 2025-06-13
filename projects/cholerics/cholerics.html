@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cholerics Showcase - yptox.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cholerics.css">
+    <script>
+        (function() {
+            const palettes = [ { name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name:'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' } ];
+            window.yptoxPalettes = palettes;
+            function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
+            let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
+            if (currentTheme) { applyTheme(currentTheme); } else { const randomPalette = palettes[Math.floor(Math.random() * palettes.length)]; applyTheme(randomPalette); }
+            document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('theme-loaded'); });
+        })();
+    </script>
+</head>
+<body class="page-project-detail">
+    <header>
+        <div class="title-bar">
+            <div class="container">
+                <a href="/index.html" class="title-link">
+                    <h1>ypt<span id="glitch-o-1">o</span>x.c<span id="glitch-o-2">o</span>m</h1>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+             <div class="container">
+                <div class="nav-links-wrapper">
+                    <a href="/creation">Creation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="/experimentation">Experimentation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="/curation">Curation</a>
+                </div>
+                <div class="header-controls">
+                    <button id="random-theme-btn" class="theme-control-btn" aria-label="Randomize theme">[R]</button>
+                    <a href="/index.html#about-me" class="theme-control-btn" aria-label="Scroll to about me section">[?]</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-wide">
+            <div class="showcase-logo-container">
+                <video src="movingcholericslogo.webm" autoplay loop muted playsinline class="showcase-logo-video"></video>
+            </div>
+            <div class="showcase-video-container">
+                <div class="video-wrapper-responsive">
+                    <iframe src="https://www.youtube.com/embed/XAkl3WNZVVQ?si=8auYSod2G8LrH4gN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="showcase-transition-divider"></div>
+
+        <div class="container">
+            <section class="showcase-section">
+                <h2 class="section-title">> Concept_</h2>
+                
+                <div class="showcase-layout-item full-width">
+                    <img src="Cholerics video Thumbnail.png" alt="Promotional thumbnail image for Cholerics." class="media-item">
+                </div>
+
+                <div class="text-block">
+                    <p>Cholerics is a surreal interactive narrative that explores nostalgia, tradition, faith, and eternity. It is a story-driven experience centered on the complicated human desire to escape to a romanticized past. Within a sprawling modern city exists a "Galaetown," a preserved pocket of medieval life, watched over by a strange religious group.</p>
+                    <p>This cultish sect, known as the Cholerics, are the descendants and followers of a village that was struck by a mutated form of the Black Death. The plague granted them a grotesque immortality, transforming them into translucent, jelly-like humanoids, immune to illness and aging. The player, as an outsider, is invited into this unsettling world to uncover its secrets, navigating the strange contradictions between centuries-old architecture and towering skyscrapers, between devout faith and grotesque reality.</p>
+                </div>
+                
+                <div class="showcase-layout-item two-column mt-large">
+                    <div class="column-item">
+                        <img src="MedievalModernMoodboard.png" alt="A moodboard showing medieval aesthetics in modern pop culture." class="media-item">
+                    </div>
+                    <div class="column-item">
+                        <h4>The Medieval/Modern Melding</h4>
+                        <p>I was fascinated by the recently growing trend of medieval aesthetics in popular culture. I believe this represents some form of escapism, a societal rejection of modern life and the struggles that come with it.</p>
+                    </div>
+                </div>
+
+                <div class="showcase-layout-item two-column">
+                    <div class="column-item">
+                        <img src="PSXGmodMoodboard.png" alt="A collage of inspirations for the game's PSX Gmod aesthetic." class="media-item">
+                    </div>
+                    <div class="column-item">
+                         <h4>Defining the Style & Tone</h4>
+                        <p>To capture the game's unique atmosphere, I adopted a "PSX-style" post-processing effect. This low-fidelity aesthetic serves both a technical and thematic purpose. It visually unifies the disparate art styles of the various assets used, creating a cohesive visual style from a repurposed GMOD map and whatever free models I could find. More importantly, it reflects the game's core idea of nostalgia and clinging to the past.</p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="showcase-transition-divider-small"></div>
+
+        <div class="container">
+            <section class="showcase-section">
+                <h2 class="section-title">> Development_</h2>
+                
+                 <div class="showcase-layout-item two-column-reversed">
+                    <div class="column-item">
+                        <p>The development of Cholerics took me through essentially every modern digital technique available. Thematically, the project evolved significantly from its initial horror-focused concept into a more nuanced narrative experience. This process was driven by a practice-led iterative approach, in which hands-on experimentation in the game engine directly informed the final story and design.</p>
+                        <h4>Initial Goals</h4>
+                        <p>I began the project with a few clear goals: I wanted to create a compelling interactive experience, develop a thematically rich and interesting world, and use the opportunity to learn and apply new skills in game development, particularly within the Unity engine and C#.</p>
+                    </div>
+                    <div class="column-item">
+                       <img src="DialogueMoodboard.png" alt="A collage showing the Unity dialogue system editor, code, and UI elements." class="media-item">
+                    </div>
+                </div>
+
+                <!-- ===== RESTRUCTURED SECTION STARTS HERE ===== -->
+                <div class="text-block">
+                    <h4>AI Prompt Storyboard</h4>
+                    <p>To rapidly visualize the intro cutscene, I developed a workflow using ChatGPT's image model. By creating a detailed "prompt storyboard" with specific references to the game's aesthetic and medieval artistic styles, I was able to generate a sequence of images that captured the desired tone. These were then adjusted and edited together in Premiere Pro alongside an original score to create the final, atmospheric introduction. In a larger scale project I would rather work alongside an artist to create these visuals, but given the time-frame of this project this was not an option.</p>
+                </div>
+
+                <div class="showcase-layout-item two-column">
+                    <div class="column-item">
+                        <div class="text-block">
+                            <h4>UI & Visual Effects</h4>
+                            <p>The UI was designed with function first in mind. I created a custom, bloody pointing-finger cursor that acts as a contextual crosshair. I also developed the animated, gooey border around the screen by generating a tileable texture, warping it in After Effects, and applying it to a modified Unity CRT Shader. I loved how it looked so much that I ended up reworking it to function in-game as well so I could place it on Gregor's model.</p>
+                        </div>
+                    </div>
+                    <div class="column-item">
+                        <div class="text-block">
+                            <h4>The Dialogue System</h4>
+                            <p>The dialogue system, built from scratch in Unity, was probably the most technically challenging part of the project. It is fully implemented and editable within the editor, allowing for easy adjustments. It features a simple text-to-speech mechanic, inspired by games like Animal Crossing & Celeste. This allows each character to have a unique & emotive voice without traditional voice acting, and adds to the game's nostalgic feel.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ===== RESTRUCTURED SECTION ENDS HERE ===== -->
+
+                <div class="text-block">
+                    <h4>Skills & Production Techniques</h4>
+                    <p>I learnt a lot through this project. These were some key skills I developed:</p>
+                    <ul>
+                        <li><strong>Level Design:</strong> I learned to take existing environments and, through lighting, asset placement, and environmental storytelling, transform them into a cohesive and atmospheric game world.</li>
+                        <li><strong>C# Scripting:</strong> The greatest technical learning curve was scripting the interactive dialogue and choice-based systems from the ground up. This involved understanding event handling, UI management, and state control within Unity.</li>
+                        <li><strong>Lighting and Shaders:</strong> I developed a foundational understanding of implementing scene lighting and basic shaders to establish mood and reinforce the PSX visual style.</li>
+                        <li><strong>Collaboration:</strong> A key part of the process was the collaboration with my friend Gus. We worked together to define the game's soundtrack, creating a score that blends modern ambient textures with old-world medieval instrumentation. His work absolutely perfectly captured the game's tone and atmosphere.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="showcase-transition-divider-small"></div>
+        
+        <div class="container">
+            <section class="showcase-section">
+                <h2 class="section-title"> > Post-Mortem_</h2>
+                
+                <div class="text-block">
+                    <h4>Strengths & Successes</h4>
+                    <p> Looking back on the project, I believe the biggest strength of Cholerics is its cohesive thematic style. It's hard to put myself into the perspective of an outsider, but I hope the commentary on nostalgia and community shines through, even if subliminally. In creating this project these themes influenced every aspect of its design, from the PSX visuals to the story itself.
+                        I was also very pleased with how the dialogue system turned out. It was quite an undertaking and it's something I plan to make use of in future projects. The collaboration on the musical score was also a major success, resulting in a soundtrack that perfectly encapsulates the game's unsettling atmosphere and retro vibe.</p>
+                </div>
+                <div class="text-block">
+                    <h4>Weaknesses & Opportunities for Reflection</h4>
+                    <p>While the project successfully realizes its core vision, I had to make a lot of compromises. I really wanted to create a build of the game that people could actually experience for themselves, but because of the short scope of the project I had to focus on fine-tuning other elements and settle for a detailed video showcase.
+                       This process raised important questions about creative ownership in a digital, collaborative age. While I'm proud of the final piece, if I were to revisit this world, my primary goal would be to replace repurposed and AI-assisted elements with original models and textures, claiming complete artistic authorship over the final product.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> I own nothing.</p>
+        </div>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>

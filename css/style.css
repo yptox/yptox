@@ -21,7 +21,6 @@ body { visibility: hidden; font-family: var(--font-primary); line-height: 1.5; b
 .container-wide { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
 /* --- UNIFIED HEADER --- */
-/* ... (existing header styles) ... */
 header { background-color: var(--bg-color); position: sticky; top: 0; z-index: 1000; }
 .title-bar { padding: 1rem 0; }
 .title-bar .container { display: flex; justify-content: center; align-items: center; position: relative; }
@@ -37,7 +36,6 @@ header { background-color: var(--bg-color); position: sticky; top: 0; z-index: 1
 .theme-control-btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
 
 /* --- GLOBAL MAIN CONTENT & TYPOGRAPHY --- */
-/* ... (existing global styles) ... */
 main { padding: 40px 0; }
 h1, h2, h3, h4 { margin-bottom: 1rem; color: var(--fg-color); line-height: 1.2; font-weight: normal; }
 h2 { font-size: 2.5rem; }
@@ -45,7 +43,6 @@ h3 { font-size: 2rem; }
 p { margin-bottom: 1rem; }
 
 /* --- HOMEPAGE SPECIFIC LAYOUT --- */
-/* ... (existing homepage styles) ... */
 .page-home main section { padding: 40px 0; }
 .page-home .featured-project-full { margin-bottom: 60px; }
 .page-home .featured-visual-placeholder { width: 100%; min-height: 400px; border: 2px dashed var(--fg-color); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 2rem; }
@@ -53,12 +50,10 @@ p { margin-bottom: 1rem; }
 .page-home .about-content { display: flex; align-items: flex-start; gap: 30px; }
 
 /* --- OTHER PAGE TITLE SECTIONS --- */
-/* ... (existing title styles) ... */
 .page-title-section { padding: 30px 0; text-align: center; border-bottom: 2px dashed var(--fg-color); }
 .page-title-section h1 { font-size: 3rem; margin-bottom: 0.5rem; }
 
 /* --- CURATION PAGE LAYOUT --- */
-/* ... (existing curation styles) ... */
 .page-curation main { padding: 40px 0; }
 .page-curation .curation-layout { display: flex; }
 .page-curation .curation-posts { width: 100%; padding-right: 120px; }
@@ -80,7 +75,6 @@ p { margin-bottom: 1rem; }
 .page-curation .post-media-left { float: left; max-width: 45%; border: 2px solid var(--fg-color); margin-right: 20px; margin-bottom: 10px; }
 
 /* --- CREATION PAGE TIMELINE --- */
-/* ... (existing creation styles) ... */
 .page-creation main { padding: 40px 0; }
 .page-creation .timeline-container { position: relative; padding-left: 50px; }
 .page-creation .timeline-container::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background-color: var(--fg-color); }
@@ -89,8 +83,10 @@ p { margin-bottom: 1rem; }
 .page-creation .timeline-item::before { content: ''; position: absolute; left: -37px; top: 15px; width: 14px; height: 14px; background-color: var(--bg-color); border: 2px solid var(--fg-color); border-radius: 50%; z-index: 1; }
 .page-creation .timeline-title { font-size: 2rem; cursor: pointer; display: inline-block; padding: 5px 0; margin: 0; }
 .page-creation .timeline-item:hover > .timeline-title, .page-creation .timeline-item:focus-within > .timeline-title { background-color: var(--accent-color); color: var(--bg-color); }
+/* --- MODIFIED: The :hover and :focus-within for the preview have been removed. JS will now handle this. --- */
 .page-creation .timeline-preview { max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transform: translateY(-20px); transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s; border: 2px dashed var(--fg-color); margin-top: 10px; }
-.page-creation .timeline-item:hover .timeline-preview, .page-creation .timeline-item:focus-within .timeline-preview { max-height: 500px; opacity: 1; visibility: visible; transform: translateY(0); }
+/* --- NOTE: This rule below is now controlled by JS for click/tap events --- */
+/* .page-creation .timeline-item:hover .timeline-preview, .page-creation .timeline-item:focus-within .timeline-preview { max-height: 500px; opacity: 1; visibility: visible; transform: translateY(0); } */
 .page-creation .timeline-preview-content { display: flex; gap: 20px; padding: 20px; }
 .page-creation .timeline-preview-visual { flex: 0 0 40%; display: block; }
 .page-creation .timeline-preview-visual img { width: 100%; height: auto; display: block; border: 2px solid var(--fg-color); }
@@ -99,6 +95,68 @@ p { margin-bottom: 1rem; }
 .page-creation .timeline-preview-text .btn { margin-top: 1rem; }
 .page-creation .archive-heading { margin-top: 80px; padding-top: 40px; border-top: 2px dashed var(--fg-color); }
 .page-creation .archive-heading p { font-size: 1.2rem; }
+
+/* --- NEW SHOWCASE LAYOUT STYLES --- */
+.full-width-media {
+    width: 100%;
+    margin: 30px 0;
+    border: 2px dashed var(--fg-color);
+}
+.full-width-media img {
+    width: 100%;
+    display: block;
+}
+.two-col-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+.two-col-panel .panel-item {
+    border: 2px dashed var(--fg-color);
+    padding: 20px;
+    display: flex; /* Added for alignment */
+    flex-direction: column; /* Added for alignment */
+}
+.two-col-panel.text-panel .panel-item {
+    border: none;
+    padding: 0;
+}
+.two-col-panel .panel-item img {
+    width: 100%;
+    display: block;
+}
+.two-col-panel .panel-item h4 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.three-col-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.three-col-grid .panel-item {
+    border: 2px dashed var(--fg-color);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.three-col-grid .panel-item h4 {
+    font-size: 1.5rem;
+}
+.three-col-grid .panel-item .media-placeholder {
+    border: 2px solid var(--fg-color);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.three-col-grid .panel-item .media-placeholder img {
+    width: 100%;
+    display: block;
+}
 
 /* --- PROJECT SHOWCASE PAGE --- */
 .page-project-detail main { padding: 0; }
@@ -110,78 +168,44 @@ p { margin-bottom: 1rem; }
 
 .showcase-transition-divider { 
     height: 400px;
-    background-image: url('../images/flesh-texture.gif');
-    background-size: 512px;
+    background-image: url('/images/cholericsbackground.gif'); /* Correct path */
+    background-size: 2500px;
     background-repeat: repeat;
     margin: 70px 0;
-    animation: pan-texture 20s linear infinite alternate;
+    animation: pan-texture 40s linear infinite ;
     border-top: 2px dashed var(--fg-color);
     border-bottom: 2px dashed var(--fg-color);
 }
-
 .showcase-transition-divider-small {
-    height: 30px;
-    background-color: var(--fg-color);
+    height: 100px;
     margin: 70px 0;
-    border-top: 2px dashed var(--bg-color);
-    border-bottom: 2px dashed var(--bg-color);
+    /* --- UPDATED TO MATCH LARGE DIVIDER --- */
+    background-image: url('/images/cholericsbackground.gif');
+    background-size: 700px;
+    background-repeat: repeat;
+    animation: pan-texture 40s linear infinite ;
+    border-top: 2px dashed var(--fg-color);
+    border-bottom: 2px dashed var(--fg-color);
 }
 
 .showcase-section { padding: 50px 0; }
 .section-title { font-size: 2.8rem; border-bottom: 2px dashed var(--fg-color); padding-bottom: 1rem; margin-bottom: 1.5rem; }
 .subsection-title { font-size: 2.2rem; margin-top: 60px; margin-bottom: 20px; }
 
-/* Styles for Collapsible Sections */
-.collapsible-trigger {
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    padding-right: 30px; /* Space for the icon */
-}
-.collapsible-trigger::after {
-    content: '[-]';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    transition: transform 0.3s;
-}
-.collapsible-trigger.is-collapsed::after {
-    content: '[+]';
-}
-.collapsible-content {
-    max-height: 0; /* Start collapsed */
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-    padding-top: 1.5rem; /* Add some space when it opens */
-}
+.collapsible-trigger { cursor: pointer; user-select: none; position: relative; padding-right: 30px; }
+.collapsible-trigger::after { content: '[-]'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 2rem; transition: transform 0.3s; }
+.collapsible-trigger.is-collapsed::after { content: '[+]'; }
+.collapsible-content { max-height: 5000px; /* Start expanded */ overflow: hidden; transition: max-height 0.5s ease-in-out; padding-top: 1.5rem; }
+.collapsible-content.is-collapsed { max-height: 0; padding-top: 0; }
 
-/* ... (rest of showcase styles) ... */
-.task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
-.task-item { border: 2px dashed var(--fg-color); padding: 15px; }
-.task-item h4 { font-size: 1.5rem; }
-.task-visual-placeholder { width: 100%; min-height: 150px; border: 2px solid var(--fg-color); display: flex; align-items: center; justify-content: center; margin: 1rem 0; }
 .text-block { border: 2px dashed var(--fg-color); padding: 20px; margin-top: 25px; }
 .text-block h4 { font-size: 1.5rem; }
-.showcase-content-layout { display: flex; gap: 40px; align-items: center; }
+.showcase-content-layout { display: flex; gap: 40px; align-items: flex-start; margin-top: 30px;}
 .showcase-content-layout.mirrored { flex-direction: row-reverse; }
 .showcase-content-layout .media-column, .showcase-content-layout .text-column { flex: 1; min-width: 0; }
-.showcase-content-layout .media-placeholder { width: 100%; min-height: 300px; border: 2px dashed var(--fg-color); display: flex; align-items: center; justify-content: center; }
-.showcase-carousel-layout { display: flex; gap: 40px; align-items: stretch; margin-top: 50px; }
-.showcase-carousel-layout.mirrored { flex-direction: row-reverse; }
-.showcase-carousel-layout .carousel-column { flex: 1.2; min-width: 0; }
-.showcase-carousel-layout .blurb-column { flex: 1; border: 2px dashed var(--fg-color); padding: 20px; display: flex; flex-direction: column; justify-content: center; }
-.showcase-carousel-container { position: relative; overflow: hidden; border: 2px dashed var(--fg-color); height: 100%; }
-.showcase-carousel-track { display: flex; height: 100%; transition: transform 0.4s ease-in-out; }
-.showcase-carousel-slide { flex: 0 0 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-.blurb-item h4 { font-size: 1.5rem; }
-.blurb-item p { margin-bottom: 0; }
-.blurb-item { display: none; }
-.blurb-item:first-child { display: block; }
+.showcase-content-layout .media-placeholder { width: 100%; border: 2px dashed var(--fg-color); display: flex; align-items: center; justify-content: center; }
 
 /* --- EXPERIMENTATION PAGE LAYOUT --- */
-/* ... (existing experimentation styles) ... */
 .page-experimentation .experimentation-layout { display: flex; gap: 40px; padding: 40px 0; }
 .page-experimentation .wip-column { flex: 2; min-width: 0; }
 .page-experimentation .work-log-column { flex: 1; display: flex; flex-direction: column; }
@@ -220,14 +244,27 @@ footer { text-align: center; padding: 20px 0; margin-top: 40px; border-top: 2px 
 
 /* --- RESPONSIVE --- */
 @media (max-width: 992px) {
+    .two-col-panel, .three-col-grid { grid-template-columns: 1fr; }
     .page-curation .curation-posts { width: 100%; padding-right: 0; }
     .page-curation .timeline-scroller { display: none; } 
     .page-experimentation .experimentation-layout { flex-direction: column; }
-    .showcase-content-layout, .showcase-carousel-layout { flex-direction: column !important; }
+    .showcase-content-layout { flex-direction: column !important; }
 }
 @media (max-width: 768px) {
     .title-bar h1 { font-size: 2.2rem; }
     .main-nav .container { flex-direction: column; gap: 10px; }
     .header-controls { position: static; transform: none; }
-    .about-content { flex-direction: column; align-items: center; text-align: center; }
+    .page-home .about-content { flex-direction: column; align-items: center; text-align: center; }
+
+    /* --- ADDED: MOBILE NAVIGATION WRAPPING --- */
+    .nav-links-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 1rem;
+    }
+    .nav-separator {
+        display: none;
+    }
+    /* --- END OF ADDED CODE --- */
 }
