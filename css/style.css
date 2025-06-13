@@ -168,7 +168,7 @@ p { margin-bottom: 1rem; }
 
 .showcase-transition-divider { 
     height: 400px;
-    background-image: url('/images/cholericsbackground.gif'); /* Correct path */
+    background-image: url('../images/cholericsbackground.gif');
     background-size: 2500px;
     background-repeat: repeat;
     margin: 70px 0;
@@ -180,7 +180,7 @@ p { margin-bottom: 1rem; }
     height: 100px;
     margin: 70px 0;
     /* --- UPDATED TO MATCH LARGE DIVIDER --- */
-    background-image: url('/images/cholericsbackground.gif');
+    background-image: url('../images/cholericsbackground.gif');
     background-size: 700px;
     background-repeat: repeat;
     animation: pan-texture 40s linear infinite ;
