@@ -1,221 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yptox.com</title>
-    <!-- Make sure this is specific for other pages too! -->
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="index-page">
-    <!-- Added class for potential specific index styling -->
-    <!-- Removed canvas, assuming it's not essential or handled elsewhere -->
-    <!-- Removed custom cursor div, keep if you reimplement the JS -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function() {
+            const palettes = [ { name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' } ];
+            window.yptoxPalettes = palettes;
+            function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
+            let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
+            if (currentTheme) { applyTheme(currentTheme); } else { const randomPalette = palettes[Math.floor(Math.random() * palettes.length)]; applyTheme(randomPalette); }
+            document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('theme-loaded'); });
+        })();
+    </script>
+</head>
+<body class="page-home">
     <header>
-      <nav>
-        <ul>
-          <!-- Add 'active' class dynamically if needed, or handle via JS -->
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="blog.html">The Daily Thing of The Day</a></li>
-          <li><a href="creation-log.html">Creation Log</a></li>
-        </ul>
-      </nav>
+        <div class="title-bar">
+            <div class="container">
+                <a href="index.html" class="title-link">
+                    <h1>ypt<span id="glitch-o-1">o</span>x.c<span id="glitch-o-2">o</span>m</h1>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+             <div class="container">
+                <div class="nav-links-wrapper">
+                    <a href="creation.html">Creation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="experimentation.html">Experimentation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="curation.html">Curation</a>
+                </div>
+                <div class="header-controls">
+                    <button id="random-theme-btn" class="theme-control-btn" aria-label="Randomize theme">[R]</button>
+                    <a href="index.html#about-me" class="theme-control-btn" aria-label="Scroll to about me section">[?]</a>
+                </div>
+            </div>
+        </nav>
     </header>
-
     <main>
-      <!-- Hero Section -->
-      <section id="hero">
-        <h1>yptox.com</h1>
-        <p>
-          This is my personal little website. I am trying to make things, and I
-          would like to do it forever and ever ideally
-        </p>
-        <marquee
-          behavior="scroll"
-          direction="left"
-          scrollamount="5"
-          style="margin-top: 15px; color: #ff00ff; font-weight: bold"
-          >please enjoy, have fun, and just do your best</marquee
-        >
-      </section>
-
-      <!-- About Section -->
-      <section id="about">
-        <h2>Ezra</h2>
-        <p>Ezra Johnston is a neat little freak</p>
-        <img
-          src="imagineAnything.jpg"
-          alt="Imagine Anything"
-          style="
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 15px auto;
-            border: 1px solid #ccc;
-          "
-          width="400"
-        />
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects">
-        <h2>These are some things I like to do</h2>
-        <div class="project-grid">
-          <!-- Project 1 -->
-          <div class="project-item">
-            <video
-              src="Framework Demo.mp4"
-              alt="Framework Demo"
-              style="
-                max-width: 100%;
-                height: 300px;
-                display: block;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                object-fit: cover;
-              "
-              loop
-              autoplay
-              muted
-            ></video>
-            <h3>Video</h3>
-            <p>
-              videos pretty good but theres more interesting things you can do
-              really. i want to do more websites and games and crap
-            </p>
-            <a href="https://www.youtube.com/@yptox" target="_blank"
-              >youtube channel</a
-            >
-          </div>
-          <!-- Project 2 -->
-          <div class="project-item">
-            <video
-              src="Incrementelligence Demo.mp4"
-              alt="Incrementelligence Demo"
-              style="
-                max-width: 100%;
-                height: 300px;
-                display: block;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                object-fit: cover;
-              "
-              loop
-              autoplay
-              muted
-            ></video>
-            <h3>Games</h3>
-            <p>
-              Ive made no games really, i did a little incremental game for uni
-              which was more of a proof of concept . i do love to game though
-              and i want to make some kind of crapp xoxoxo
-            </p>
-            <a href="https://xenolotl.itch.io" target="_blank">itch.io page</a>
-          </div>
-          <!-- Project 3 -->
-          <div class="project-item">
-            <img
-              src="horrendous incantations.gif"
-              alt="Horrendous Incantations GIF"
-              style="
-                max-width: 100%;
-                height: auto;
-                display: block;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-              "
-              width="300"
-            />
-            <h3>Curation</h3>
-            <p>
-              i want to share a daily thing of the day for every day - there are
-              lots of things i love a lot and i want to put them on my web site.
-              i hope that is ok with you.
-            </p>
-            <a href="blog.html" target="_blank">The Daily Thing of The Day</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Comments/Guestbook Section -->
-      <section id="comments">
-        <h2>Comments</h2>
-        <!-- Changed title slightly -->
-        <p>Thoughts?</p>
-        <!-- Optional: Keep or remove -->
-
-        <!-- === START CUSDIS EMBED === -->
-        <div
-          id="cusdis_thread"
-          data-host="https://cusdis.com"
-          data-app-id="472395f5-db90-4009-b575-4dea9002c1bb"
-          <!--
-          The
-          data-page-*
-          attributes
-          below
-          will
-          be
-          set
-          by
-          the
-          script
-          --
-        >
-          data-page-id="" data-page-url="" data-page-title="" >
-        </div>
-
-        <!-- Script to dynamically set Cusdis attributes -->
-        <script>
-          (function () {
-            // Use an IIFE to avoid polluting global scope
-            var cusdisThread = document.getElementById("cusdis_thread");
-            if (cusdisThread) {
-              // Use the page's path as a unique ID. Handles different pages.
-              // e.g., '/', '/index.html', '/blog.html', '/creation-log.html'
-              var pageId = window.location.pathname;
-
-              // Optional: If you want the root path '/' and '/index.html'
-              // to share the same comment thread, normalize the ID.
-              // if (pageId === '/' || pageId === '/index.html') {
-              //     pageId = '/'; // Or '/home' or similar unique identifier
-              // }
-              // Using pathname directly is usually fine and separates comments cleanly.
-
-              var pageUrl = window.location.href;
-              var pageTitle = document.title; // Gets the title from the <title> tag
-
-              cusdisThread.setAttribute("data-page-id", pageId);
-              cusdisThread.setAttribute("data-page-url", pageUrl);
-              cusdisThread.setAttribute("data-page-title", pageTitle);
-
-              // console.log('Cusdis Attributes Set:'); // Optional: for debugging
-              // console.log('ID:', pageId);
-              // console.log('URL:', pageUrl);
-              // console.log('Title:', pageTitle);
-            } else {
-              console.error("Cusdis thread element not found.");
-            }
-          })(); // Immediately invoke the function
-        </script>
-
-        <!-- Load the main Cusdis script *AFTER* the attributes are set -->
-        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-        <!-- === END CUSDIS EMBED === -->
-
-        <hr style="margin: 30px 0; border: none; border-top: 1px dashed #999" />
-        <p style="text-align: center">bye bye</p>
-      </section>
+        <section id="featured-work" class="featured-work-section-full">
+            <div class="container">
+                <div class="featured-project-full">
+                    <div class="featured-visual-placeholder">
+                        <p>--//-- Video / GIF Placeholder --//--</p>
+                    </div>
+                    <h3>Cholerics</h3>
+                    <p>A game concept showcase.</p>
+                    <a href="projects/cholerics.html" class="btn">see more</a>
+                </div>
+                <div class="featured-project-full">
+                    <div class="featured-visual-placeholder">
+                        <p>--//-- Visual Placeholder --//--</p>
+                    </div>
+                    <h3>Twitter 2</h3>
+                    <p>An incremental social media platform.</p>
+                    <a href="projects/my-new-dance.html" class="btn">View Project</a>
+                </div>
+            </div>
+        </section>
+        <section id="about-me" class="about-section">
+            <div class="container">
+                <h2>> About Me_</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://placehold.co/150x150/888/eee?text=Photo" alt="A photo of the site author">
+                    </div>
+                    <div class="about-text">
+                        <p>This is where the information about you as an artist will go. You can talk about your process, your inspirations, or whatever feels right for this very special personal website.</p>
+                        <p>The question mark button scrolls here. Salutations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
     <footer>
-      <p>i love youy!</p>
+        <div class="container">
+            <p>© <span id="current-year"></span> I own nothing.</p>
+        </div>
     </footer>
-
-    <!-- Ensure script.js is linked if it contains other necessary JS -->
-    <!-- <script src="script.js"></script> -->
-    <!-- If script.js is truly empty or only had comments stuff, you can remove this link -->
-  </body>
+    <script src="js/script.js"></script>
+</body>
 </html>

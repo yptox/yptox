@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curation - yptox.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function() {
+            const palettes = [ { name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' } ];
+            window.yptoxPalettes = palettes;
+            function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
+            let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
+            if (currentTheme) { applyTheme(currentTheme); } else { const randomPalette = palettes[Math.floor(Math.random() * palettes.length)]; applyTheme(randomPalette); }
+            document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('theme-loaded'); });
+        })();
+    </script>
+</head>
+<body class="page-curation">
+    <header>
+        <div class="title-bar">
+            <div class="container">
+                <a href="index.html" class="title-link">
+                    <h1>ypt<span id="glitch-o-1">o</span>x.c<span id="glitch-o-2">o</span>m</h1>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+             <div class="container">
+                <div class="nav-links-wrapper">
+                    <a href="creation.html">Creation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="experimentation.html">Experimentation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="curation.html" class="active">Curation</a>
+                </div>
+                <div class="header-controls">
+                    <button id="random-theme-btn" class="theme-control-btn" aria-label="Randomize theme">[R]</button>
+                    <a href="index.html#about-me" class="theme-control-btn" aria-label="Scroll to about me section">[?]</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="curation-layout">
+
+                <!-- Left Column: Posts -->
+                <div class="curation-posts">
+                    
+                    <div id="date-2025-06-13" class="date-anchor"></div>
+                    <article class="curated-post">
+                        <div class="post-date-header"><p>June 13, 2025</p></div>
+                        <div class="post-content">
+                            <h3>A Showcase of Simplicity</h3>
+                            <p>This is a template post to demonstrate the layout without any media.</p>
+                        </div>
+                    </article>
+
+                    <div id="date-2025-06-12" class="date-anchor"></div>
+                    <article class="curated-post">
+                        <div class="post-date-header"><p>June 12, 2025</p></div>
+                        <div class="post-content">
+                            <h3>Testing The Timeline</h3>
+                            <p>This is a new test post for the 12th.</p>
+                        </div>
+                    </article>
+                    
+                    <div id="date-2025-06-11" class="date-anchor"></div>
+                    <article class="curated-post">
+                        <div class="post-date-header"><p>June 11, 2025</p></div>
+                        <div class="post-content">
+                            <h3>Example Post with Media</h3>
+                            <img src="https://placehold.co/400x250/333/eee?text=Media" alt="Placeholder Image" class="post-media-left">
+                            <p>This post demonstrates how media will be handled. An image is floated to the **left**, positioned below the title, and the text content elegantly wraps around it.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+                        </div>
+                    </article>
+
+                     <article class="curated-post">
+                        <div class="post-date-header"><p>June 10, 2025</p></div>
+                        <div class="post-content">
+                            <h3>Another Post from the Same Day</h3>
+                            <p>Multiple posts from the same date are grouped under a single navigation point.</p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Right Column: Timeline Scroller -->
+                <aside class="timeline-scroller">
+                    <div class="scroller-track">
+                        <a href="#date-2025-06-13" class="scroller-mark" style="top: 0%;"><span class="scroller-tooltip">13/6</span></a>
+                        <a href="#date-2025-06-12" class="scroller-mark" style="top: 33%;"><span class="scroller-tooltip">12/6</span></a>
+                        <a href="#date-2025-06-11" class="scroller-mark" style="top: 66%;"><span class="scroller-tooltip">11/6</span></a>
+                        <a href="#date-2025-06-10" class="scroller-mark" style="top: 100%;"><span class="scroller-tooltip">10/6</span></a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> I own nothing.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

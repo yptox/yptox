@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cholerics Showcase - yptox.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        (function() {
+            const palettes = [ { name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name:'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' } ];
+            window.yptoxPalettes = palettes;
+            function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
+            let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
+            if (currentTheme) { applyTheme(currentTheme); } else { const randomPalette = palettes[Math.floor(Math.random() * palettes.length)]; applyTheme(randomPalette); }
+            document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('theme-loaded'); });
+        })();
+    </script>
+</head>
+<body class="page-project-detail">
+    <header>
+        <div class="title-bar">
+            <div class="container">
+                <a href="../index.html" class="title-link">
+                    <h1>ypt<span id="glitch-o-1">o</span>x.c<span id="glitch-o-2">o</span>m</h1>
+                </a>
+            </div>
+        </div>
+        <nav class="main-nav">
+             <div class="container">
+                <div class="nav-links-wrapper">
+                    <a href="../creation.html" class="active">Creation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="../experimentation.html">Experimentation</a>
+                    <span class="nav-separator">|</span>
+                    <a href="../curation.html">Curation</a>
+                </div>
+                <div class="header-controls">
+                    <button id="random-theme-btn" class="theme-control-btn" aria-label="Randomize theme">[R]</button>
+                    <a href="../index.html#about-me" class="theme-control-btn" aria-label="Scroll to about me section">[?]</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-wide">
+            <div class="showcase-logo-container">
+                <video src="movingCholericsLogo.webm" autoplay loop muted playsinline class="showcase-logo-video"></video>
+            </div>
+            <div class="showcase-video-container">
+                <div class="video-wrapper-responsive">
+                    <iframe src="https://www.youtube.com/embed/XAkl3WNZVVQ?si=8auYSod2G8LrH4gN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="showcase-transition-divider"></div>
+
+        <div class="container">
+            <section class="showcase-section">
+                <h2 class="section-title collapsible-trigger">> Concept_</h2>
+                <div class="collapsible-content">
+                    <div class="showcase-content-layout">
+                        <div class="media-column"><img src="../images/cholerics/concept_dev_main.jpg" alt="Concept Development Inspirations" class="media-placeholder" style="object-fit: contain;"></div>
+                        <div class="text-column">
+                             <p>The project's genesis, as outlined in the initial concept presentation, was a fusion of two disparate but evocative ideas: the historical horror of a **medieval plague** and the grotesque, amorphous viscosity of **jelly**. The initial goal was to create an interactive piece exploring this transformation. Early research into related works like *The Blob*, *Evangelion*, and *Pathologic* established a clear tonal ambition centered on body horror, surreal transformation, and atmospheric dread. The core concept was simple and powerful: a mutated Black Death strain in 14th-century Europe causes its victims to devolve into immortal but non-sentient puddles of goo. At this stage, the project was a compelling horror scenario but had yet to find its deeper thematic anchor.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-carousel-layout">
+                        <div class="carousel-column">
+                            <div id="concept-carousel" class="showcase-carousel-container" data-blurbs-id="concept-blurbs">
+                                <div class="showcase-carousel-track">
+                                    <div class="showcase-carousel-slide"><img src="../images/cholerics/concept_dev_slide_goals.jpg" alt="Initial Project Goals" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                                    <div class="showcase-carousel-slide"><img src="../images/cholerics/concept_dev_slide_jelly.jpg" alt="Jelly Concept" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                                    <div class="showcase-carousel-slide"><img src="../images/cholerics/concept_lore.jpg" alt="Background and Lore" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                                </div>
+                                <button class="carousel-btn prev"><</button><button class="carousel-btn next">></button>
+                            </div>
+                        </div>
+                        <div id="concept-blurbs" class="blurb-column">
+                            <div class="blurb-item"><h4>Initial Goals</h4><p>The project began with a set of core principles: to create an interactive experience, develop a thematically interesting world, and learn new skills in the process.</p></div>
+                            <div class="blurb-item"><h4>Jelly</h4><p>Despite being a starting point for essentially the whole project, the cholerics and their jelly-like appearance has taken a backseat in the process so far. Their presence will be felt more than shown.</p></div>
+                            <div class="blurb-item"><h4>Background / Lore</h4><p>A 14th-century village experiences a mutated plague. The infected transform into translucent, jelly-like humanoids, immune to illness and aging. Religious groups form around them, dubbing them "Cholerics." In the modern day, they watch over "Galaetowns," pockets of preserved medieval culture.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="showcase-transition-divider-small"></div>
+
+        <div class="container">
+            <section class="showcase-section">
+                <h2 class="section-title collapsible-trigger">> Development_</h2>
+                <div class="collapsible-content">
+                    <p>The project's most significant evolutionary leap occurred during the second phase of development. The introduction of a core tension between the **Medieval and the Modern** elevated the concept from a simple horror scenario into a complex commentary on nostalgia, tradition, and escapism. This pivot was the catalyst for a cascade of narrative and world-building development, and the solidification of the project's unique aesthetic.</p>
+                    
+                    <h3 class="subsection-title">>> Foundation & Early Explorations</h3>
+                    <div class="task-grid">
+                        <div class="task-item"><h4>The Medieval/Modern Melding</h4><div class="task-visual-placeholder"><img src="../images/cholerics/research_medieval_modern.jpg" alt="Medieval Modern Moodboard" style="width:100%; height:100%; object-fit: cover;"></div><p>Medieval aesthetics have grown prominent in pop culture, representing a form of escapism and rejection of modern reality. This thematic pivot was the key to unlocking the project's deeper meaning.</p></div>
+                        <div class="task-item"><h4>Visualizing the World</h4><div class="task-visual-placeholder"><img src="../images/cholerics/research_gmod_maps.jpg" alt="GMOD maps" style="width:100%; height:100%; object-fit: cover;"></div><p>To achieve the unique blended aesthetic, the decision was made to use repurposed GMOD maps like gm_bigcity and gm_goldencity as a foundation, creating a surreal juxtaposition of architectural styles.</p></div>
+                        <div class="task-item"><h4>Defining the Style & Tone</h4><div class="task-visual-placeholder"><img src="../images/cholerics/research_style_tone.jpg" alt="Style and Tone" style="width:100%; height:100%; object-fit: cover;"></div><p>A "PSX" style post-processing effect was chosen to unify the disparate assets and art styles. This retro look also thematically reinforces the game's core theme of an immortal clinging to a centuries-old civilisation.</p></div>
+                    </div>
+
+                    <h3 class="subsection-title">>> Technical & Artistic Breakdown</h3>
+                    <div class="showcase-content-layout mirrored">
+                        <div class="media-column"><img src="../images/cholerics/tech_dialogue_system.jpg" alt="Unity Dialogue System" class="media-placeholder" style="object-fit: contain;"></div>
+                        <div class="text-column"><p>The final phase of the project saw the maturation from abstract ideas into a tangible, interactive experience. A significant portion of development focused on creating robust, reusable systems, with the fully implemented dialogue system in Unity standing out as a central technical achievement.</p></div>
+                    </div>
+                    <div class="showcase-carousel-layout mirrored">
+                        <div class="carousel-column">
+                            <div id="development-carousel" class="showcase-carousel-container" data-blurbs-id="development-blurbs">
+                                <div class="showcase-carousel-track">
+                                    <div class="showcase-carousel-slide"><img src="../images/cholerics/tech_custom_models.jpg" alt="Custom Rigged Model" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                                    <div class="showcase-carousel-slide"><img src="../images/cholerics/tech_ui_elements.jpg" alt="UI Elements" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                                    <div class="showcase-carousel-slide"><img src="../images/cholerics/tech_intro_storyboard.jpg" alt="AI Prompt Storyboard" style="width: 100%; height: 100%; object-fit: contain;"></div>
+                                </div>
+                                <button class="carousel-btn prev"><</button><button class="carousel-btn next">></button>
+                            </div>
+                        </div>
+                        <div id="development-blurbs" class="blurb-column">
+                            <div class="blurb-item"><h4>Custom Models</h4><p>Exploration into creating custom rigged models for characters, with a plan to edit and combine freely available assets with AI-generated models for variations of cultists and immortals.</p></div>
+                            <div class="blurb-item"><h4>UI Design</h4><p>Custom UI elements, including a contextual cursor and dialogue boxes, were designed to fit the game's aesthetic and improve player interaction.</p></div>
+                            <div class="blurb-item"><h4>AI-Assisted Storyboarding</h4><p>An innovative process using ChatGPT's image model to generate a "prompt storyboard" helped to quickly visualize the intro cutscene based on reference points and original text.</p></div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="subsection-title">>> Skill & Knowledge Synthesis</h3>
+                    <div class="text-block">
+                        <h4>Theoretical Knowledge</h4>
+                        <p>The project is a practical application of worldbuilding theories, blending modern and medieval settings to explore themes of nostalgia, faith, tradition, and eternity through a surreal, dialogue-focused story experience.</p>
+                    </div>
+                    <div class="text-block">
+                        <h4>Conceptual Skills & Production Techniques</h4>
+                        <p>Throughout development, a number of key skills were acquired and refined:</p>
+                        <ul>
+                            <li>Level design in a 3D environment.</li>
+                            <li>Scripting dialogue and interaction systems in C#.</li>
+                            <li>Scene lighting and basic shader implementation in Unity.</li>
+                            <li>Texture displacement and warping in After Effects.</li>
+                            <li>Character rigging and animation.</li>
+                            <li>Managing collaboration with a musician for the score.</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="subsection-title">>> Process & Workflow</h3>
+                    <div class="text-block">
+                        <h4>Methodology & Collaboration</h4>
+                        <p>A practice-led approach was central to development, emphasizing hands-on experimentation. The project also involved collaboration with a musician to create a score that blended modern ambient techniques with old medieval instrumentation. The full development process is documented in the work log.
+                        <br><br>
+                        <a href="../experimentation.html" class="btn">View Detailed Work Log</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="showcase-transition-divider-small"></div>
+        
+        <div class="container">
+            <section class="showcase-section">
+                <h2 class="section-title collapsible-trigger">> Post-Mortem_</h2>
+                <div class="collapsible-content">
+                    <div class="text-block">
+                        <h4>Strengths & Successes</h4>
+                        <p>The journey of "Cholerics" is a testament to an iterative design process where thematic discovery informed technical implementation. The project's primary strengths are its cohesive thematic core, its visually unifying PSX aesthetic, and its robust, functional dialogue system.</p>
+                    </div>
+                    <div class="text-block">
+                        <h4>Weaknesses & Opportunities for Growth</h4>
+                        <p>The development process also produced a clear roadmap for future work. The reflection phase identified the high-priority tasks needed to complete the vision, as well as lower priority stretch goals.</p>
+                        <br>
+                        <strong>High Priority:</strong>
+                        <ul>
+                            <li>In-depth story chart and writing dialogue.</li>
+                            <li>Final map design.</li>
+                            <li>Developing the wandering simulation for Ending 1.</li>
+                            <li>Creating final custom models.</li>
+                        </ul>
+                        <br>
+                        <strong>Low Priority:</strong>
+                        <ul>
+                            <li>Full implementation of Ending 2.</li>
+                            <li>NPC AI and advanced animation.</li>
+                            <li>Adding more sound effects.</li>
+                            <li>Remaking any remaining AI-generated content with original assets.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> I own nothing.</p>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
