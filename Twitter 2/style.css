@@ -1,0 +1,563 @@
+/* The whole aim of the css was to essentially clone the feel of twitter as best I could. This meant copying the colour scheme, fonts, layout, and rounded corners on buttons and images. 
+//
+//  apart from just cloning twitter i made sure sure buttons have a clear "hover" style so you know you can click them, and a "disabled" style so you know when you can't.
+ The bot progress bars fill up so you can see their timers, and the notifications have different colors to show what kind of message it is (green for unlocks, blue for general spammy info).
+*/
+
+ html, body { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden; 
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #F5F8FA;
+    color: #14171A;
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start;
+    padding: 20px; 
+    box-sizing: border-box; 
+    line-height: 1.4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* This is how I made dark mode work. My script adds a "dark-mode" class to the "<html>" element.
+These specific CSS rules only apply when that class is there and change the background and text color for the whole page. */
+html.dark-mode body {
+    background-color: #000000;
+    color: #E7E9EA;
+}
+
+.game-container {
+    width: 95%; max-width: 1000px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E8ED;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 0; 
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
+    height: calc(100vh - 40px); 
+    max-height: calc(100vh - 40px);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+html.dark-mode .game-container {
+    background-color: #000000;
+    border-color: #2F3336;
+}
+
+.game-header { 
+    padding: 15px 20px; 
+    border-bottom: 1px solid #E1E8ED; 
+    flex-shrink: 0; 
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s;
+}
+
+html.dark-mode .game-header {
+    border-color: #2F3336;
+}
+
+.header-main-content { flex-grow: 1; }
+.header-controls { display: flex; align-items: center; gap: 10px; }
+
+#darkModeToggle {
+    background: transparent;
+    border: 1px solid #E1E8ED;
+    color: #657786;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+html.dark-mode #darkModeToggle {
+    border-color: #2F3336;
+    color: #71767B;
+}
+
+/* The "hover" style is applied when the user's mouse is over a button and some other elements. */
+#darkModeToggle:hover {
+    background-color: #F5F8FA;
+}
+
+html.dark-mode #darkModeToggle:hover {
+    background-color: #080808;
+}
+
+.dark-mode-icon {
+    stroke: #657786;
+}
+html.dark-mode .dark-mode-icon {
+    stroke: #71767B;
+}
+
+.site-branding { display: flex; align-items: center; margin-bottom: 15px; }
+.site-logo {  height: 55px; }
+.profile-header { display: flex; align-items: center; margin-bottom: 15px; }
+#profilePicMain { width: 72px; height: 72px; border-radius: 50%; margin-right: 15px; border: 2px solid #1DA1F2; object-fit: cover; }
+.profile-info h1 { margin: 0 0 2px 0; font-size: 1.5em; font-weight: 700; color: #14171A; }
+.profile-info .handle { margin: 0 0 4px 0; color: #657786; font-size: 0.95em; }
+.profile-info .bio { margin: 0; color: #14171A; font-size: 0.9em; }
+
+html.dark-mode .profile-info h1, html.dark-mode .profile-info .bio {
+    color: #E7E9EA;
+}
+html.dark-mode .profile-info .handle {
+    color: #71767B;
+}
+
+.profile-name-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.global-stats { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.85em; padding-top: 15px; border-top: 1px solid #E1E8ED; margin-top: 15px; width: 100%; transition: border-color 0.3s;}
+.global-stats p { margin: 0; color: #657786; }
+.global-stats span { font-weight: 600; color: #14171A; }
+
+html.dark-mode .global-stats {
+    border-color: #2F3336;
+}
+html.dark-mode .global-stats p {
+    color: #71767B;
+}
+html.dark-mode .global-stats span {
+    color: #E7E9EA;
+}
+
+.main-layout { display: flex; flex-grow: 1; min-height: 0; }
+.feed-column { flex: 3; min-width: 0; border-right: 1px solid #E1E8ED; display: flex; flex-direction: column; transition: border-color 0.3s;}
+.sidebar-column { flex: 1.2; min-width: 280px; background-color: #FFFFFF; padding: 0; display: flex; flex-direction: column; transition: background-color 0.3s; position: relative; }
+
+html.dark-mode .feed-column {
+    border-color: #2F3336;
+}
+html.dark-mode .sidebar-column {
+    background-color: #000000;
+}
+.desktop-only-header {
+    margin: 0; padding: 12px 15px; font-size: 1.1em; font-weight: 700;
+    color: #14171A; border-bottom: 1px solid #E1E8ED;
+    background-color: #FFFFFF; flex-shrink: 0;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+html.dark-mode .desktop-only-header {
+    color: #E7E9EA;
+    border-color: #2F3336;
+    background-color: #000000;
+}
+
+.main-content-header {
+    display: none;
+    border-bottom: 1px solid #E1E8ED;
+    flex-shrink: 0;
+}
+html.dark-mode .main-content-header {
+    border-color: #2F3336;
+}
+
+.main-view-tab {
+    flex-basis: 50%;
+    flex-grow: 1;
+    padding: 14px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #657786;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+html.dark-mode .main-view-tab {
+    color: #71767B;
+}
+
+.main-view-tab:hover {
+    background-color: #F5F8FA;
+}
+html.dark-mode .main-view-tab:hover {
+    background-color: #080808;
+}
+
+.main-view-tab.active {
+    color: #1DA1F2;
+    border-bottom-color: #1DA1F2;
+}
+
+#tweetFeedContainer { display: flex; flex-direction: column; flex-grow: 1; min-height: 0; }
+#tweetFeed { flex-grow: 1; overflow-y: auto; padding: 0; }
+.no-tweets-message { color: #657786; text-align: center; padding: 30px; font-style: italic; }
+.tweet { background-color: #FFFFFF; border-bottom: 1px solid #E1E8ED; padding: 12px 15px; display: flex; gap: 12px; transition: background-color 0.2s, border-color 0.3s; }
+.tweet:hover { background-color: #F5F8FA; }
+
+html.dark-mode .no-tweets-message { color: #71767B; }
+html.dark-mode .tweet {
+    background-color: #000000;
+    border-color: #2F3336;
+}
+html.dark-mode .tweet:hover {
+    background-color: #080808;
+}
+
+
+.tweet-avatar-container { flex-shrink: 0; }
+.tweet-author-img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.tweet-main-content { flex-grow: 1; min-width: 0; }
+.tweet-header { display: flex; align-items: center; margin-bottom: 4px; font-size: 0.95em; }
+.tweet-author-details .tweet-author-name { font-weight: 700; color: #14171A; }
+.tweet-author-details .tweet-author-handle, .tweet-timestamp { color: #657786; margin-left: 5px; }
+.tweet-timestamp { margin-left: auto; }
+.tweet-content { margin-bottom: 10px; font-size: 0.95em; line-height: 1.5; word-wrap: break-word; color: #14171A; }
+.tweet-image-container { margin: 10px 0; text-align: left; }
+.tweet-image { max-width: 100%; max-height: 350px; border-radius: 6px; border: 1px solid #E1E8ED; object-fit: cover; }
+
+html.dark-mode .tweet-author-details .tweet-author-name { color: #E7E9EA; }
+html.dark-mode .tweet-author-details .tweet-author-handle, html.dark-mode .tweet-timestamp { color: #71767B; }
+html.dark-mode .tweet-content { color: #E7E9EA; }
+html.dark-mode .tweet-image { border-color: #2F3336; }
+
+
+.interaction-buttons-container { margin-top: 10px; display: flex; gap: 8px; }
+.interaction-buttons-container button {
+    background-color: transparent; color: #657786;
+    border: 1px solid #E1E8ED; padding: 6px 10px;
+    border-radius: 16px; cursor: pointer; font-size: 0.75em; font-weight: 600;
+    transition: all 0.2s ease; flex-grow: 1; text-align: center;
+}
+.interaction-buttons-container button:hover:not(:disabled) {
+    color: #1DA1F2; border-color: #1DA1F2; background-color: rgba(29,161,242,0.1);
+}
+
+html.dark-mode .interaction-buttons-container button {
+    color: #71767B;
+    border-color: #2F3336;
+}
+
+.interaction-buttons-container button.interaction-complete {
+    border-color: transparent;
+    background-color: transparent;
+    cursor: default;
+    color: #657786;
+    opacity: 0.8;
+}
+.interaction-buttons-container button.interaction-complete:hover {
+    background-color: transparent;
+    color: #657786;
+}
+
+html.dark-mode .interaction-buttons-container button.interaction-complete {
+    color: #71767B;
+}
+
+#upgradesArea { 
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #E1E8ED; 
+    flex: 1;
+}
+#activityNotificationsArea { 
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+html.dark-mode #upgradesArea {
+    border-color: #2F3336;
+}
+
+#upgradesArea h4 {
+    margin: 0; padding: 12px 15px; font-size: 1.1em; font-weight: 700;
+    color: #14171A; border-bottom: 1px solid #E1E8ED;
+    background-color: #FFFFFF; flex-shrink: 0;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+#activityNotificationsArea h4 {
+    margin: 0; padding: 12px 15px; font-size: 1.1em; font-weight: 700;
+    color: #14171A; border-bottom: 1px solid #E1E8ED;
+    background-color: #FFFFFF; flex-shrink: 0;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+html.dark-mode #upgradesArea h4, html.dark-mode #activityNotificationsArea h4 {
+    color: #E7E9EA;
+    border-color: #2F3336;
+    background-color: #000000;
+}
+
+#upgradesList {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+    overflow-y: auto;
+}
+#notificationsList { 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+    overflow-y: auto;
+}
+
+#upgradesList li { 
+    padding: 10px 15px; 
+    margin-bottom: 0; 
+    font-size: 0.85em; 
+    border-bottom: 1px solid #E1E8ED; 
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+#notificationsList li { 
+    padding: 10px 15px; 
+    margin-bottom: 0; 
+    font-size: 0.85em; 
+    border-bottom: 1px solid #E1E8ED; 
+    transition: background-color 0.3s, border-color 0.3s; 
+}
+
+html.dark-mode #upgradesList li, html.dark-mode #notificationsList li {
+    border-color: #2F3336;
+}
+
+#upgradesList li:last-child { border-bottom: none; }
+#notificationsList li:last-child { border-bottom: none; }
+
+#upgradesList button {
+    width: 100%; padding: 8px 10px; font-size: 0.9em;
+    background-color: #1DA1F2; color: #FFFFFF;
+    border: none; border-radius: 6px; cursor: pointer;
+    text-align: left; transition: background-color 0.2s ease; margin-top: 4px;
+}
+#upgradesList button:hover:not(:disabled) { background-color: #1a91da; }
+
+/* The ":disabled" style is for buttons when they cant yet be clicked */
+#upgradesList button:disabled { background-color: #AAB8C2; color: #657786; cursor: not-allowed; }
+
+html.dark-mode #upgradesList button:disabled {
+    background-color: #536471;
+    color: #8d9aa5;
+}
+
+#notificationsList li.notification-unlock { background-color: rgba(23,191,99,0.1); color: #177f43; font-weight: bold; }
+#notificationsList li.notification-system { background-color: rgba(29,161,242,0.08); color: #0f628a; }
+#notificationsList li.notification-error { background-color: rgba(224,36,94,0.1); color: #c41e3a; }
+
+html.dark-mode li.notification-unlock { background-color: rgba(0, 186, 124, 0.15); color: #00ba7c; }
+html.dark-mode li.notification-system { background-color: rgba(29, 161, 242, 0.15); color: #1DA1F2; }
+html.dark-mode li.notification-error { background-color: rgba(249, 24, 128, 0.15); color: #f91880; }
+
+
+.game-footer { padding: 15px 20px; text-align: center; border-top: 1px solid #E1E8ED; font-size: 0.8em; color: #657786; background-color: #F5F8FA; flex-shrink: 0; transition: all 0.3s; }
+.game-footer p { margin: 3px 0; }
+html.dark-mode .game-footer {
+    border-color: #2F3336;
+    color: #71767B;
+    background-color: #000000;
+}
+
+.bot-progress-container { height: 6px; background-color: #E1E8ED; border-radius: 3px; margin-top: 6px; overflow: hidden; }
+.bot-progress-bar { height: 100%; width: 0%; background-color: #1DA1F2; border-radius: 3px; transition: width 0.05s linear; }
+html.dark-mode .bot-progress-container {
+    background-color: #2F3336;
+}
+
+/* Using keyframes to animate the little floating text that appears when you click*/
+@keyframes fade-up { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-40px); } }
+.click-popup { position: absolute; z-index: 1000; pointer-events: none; font-weight: bold; font-size: 1.1em; color: #000; text-shadow: 0 0 5px white; padding: 2px 5px; animation: fade-up 1.2s forwards ease-out; }
+html.dark-mode .click-popup {
+    color: #FFF;
+    text-shadow: 0 0 5px black;
+}
+
+#blockNathanButton {
+    background-color: #E0245E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+#blockNathanButton:hover:not(:disabled) {
+    background-color: #c41e3a;
+}
+
+#blockNathanButton:disabled {
+    background-color: #E0245E;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#endScreen {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #F5F8FA; color: #14171A; z-index: 2000;
+    flex-direction: column; justify-content: center; align-items: center; text-align: center;
+}
+#endScreen h1 { font-size: 3em; font-weight: 700; margin-bottom: 20px; }
+#endScreen .final-stat { font-size: 1.2em; color: #657786; margin-bottom: 30px; }
+#endScreen .final-stat span { font-weight: bold; color: #14171A; }
+#endScreen button {
+    padding: 12px 24px; font-size: 1em; font-weight: bold;
+    background-color: #1DA1F2; color: #FFFFFF;
+    border: none; border-radius: 8px; cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+#endScreen button:hover { background-color: #1a91da; }
+
+html.dark-mode #endScreen { background-color: #000000; color: #E7E9EA; }
+html.dark-mode #endScreen .final-stat { color: #71767B; }
+html.dark-mode #endScreen .final-stat span { color: #E7E9EA; }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+.modal-content h2 {
+    margin-top: 0;
+    color: #14171A;
+}
+.modal-content p {
+    color: #657786;
+    line-height: 1.6;
+}
+.modal-content .unlock-notification {
+    background-color: rgba(23,191,99,0.1);
+    color: #177f43;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+.modal-content button {
+    background-color: #1DA1F2;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+}
+.modal-content button:hover {
+    background-color: #1a91da;
+}
+
+html.dark-mode .modal-content { background-color: #000000; }
+html.dark-mode .modal-content h2 { color: #E7E9EA; }
+html.dark-mode .modal-content p { color: #71767B; }
+html.dark-mode .modal-content .unlock-notification {
+    background-color: rgba(0, 186, 124, 0.15);
+    color: #00ba7c;
+}
+
+/* This media query lets me apply CSS rules only when the screen is a certain size. This is how
+ I make the website look decent on both desktop and mobile. All the rules inside this "@media" block will only work on screens 800 pixels wide or smaller. */
+@media (max-width: 800px) {
+    body { padding: 0; }
+    .game-container {
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        border: none;
+    }
+    .game-footer { display: none; }
+
+    .main-content-header {
+        display: flex;
+    }
+    .desktop-only-header {
+        display: none;
+    }
+    
+    /* This changes the main layout from being in a row to a column when viewed on mobile */
+    .main-layout {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .sidebar-column {
+        display: none;
+        width: 100%;
+        border-right: none;
+        flex: 1;
+    }
+    .main-layout.upgrades-view-active .sidebar-column {
+        display: flex;
+    }
+    
+    /* This rule hides the timeline when the "Upgrades" tab is active on mobile. */
+    .main-layout.upgrades-view-active #tweetFeedContainer {
+        display: none;
+    }
+
+    .feed-column {
+        border-right: none;
+        flex-grow: 1;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #profilePicMain {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-height: 500px) and (min-width: 801px) {
+    .main-content-header {
+        display: none;
+    }
+    .desktop-only-header {
+        display: block;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #profilePicMain {
+        margin-bottom: 10px;
+    }
+}
