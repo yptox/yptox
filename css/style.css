@@ -83,7 +83,7 @@ p { margin-bottom: 1rem; }
 .page-creation .timeline-item::before { content: ''; position: absolute; left: -37px; top: 15px; width: 14px; height: 14px; background-color: var(--bg-color); border: 2px solid var(--fg-color); border-radius: 50%; z-index: 1; }
 .page-creation .timeline-title { font-size: 2rem; cursor: pointer; display: inline-block; padding: 5px 0; margin: 0; }
 .page-creation .timeline-item:hover > .timeline-title, .page-creation .timeline-item:focus-within > .timeline-title { background-color: var(--accent-color); color: var(--bg-color); }
-.page-creation .timeline-preview { max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transform: translateY(-20px); transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s; border: 2px dashed var(--fg-color); margin-top: 20px; }
+.page-creation .timeline-preview { max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transform: translateY(-20px); transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s; border: 2px dashed var(--fg-color); margin-top: 30px; }
 
 .page-creation .timeline-preview-content {
     padding: 20px;
