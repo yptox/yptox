@@ -45,7 +45,7 @@ p { margin-bottom: 1rem; }
 /* --- HOMEPAGE SPECIFIC LAYOUT --- */
 .page-home main section { padding: 40px 0; }
 .page-home .featured-project-full { margin-bottom: 60px; }
-.page-home .featured-visual-placeholder { width: 100%; min-height: 400px; border: 2px dashed var(--fg-color); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 2rem; }
+.page-home .featured-visual-placeholder { width: 100%; border: 2px dashed var(--fg-color); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 2rem; }
 .page-home .about-section { border-top: 2px dashed var(--fg-color); }
 .page-home .about-content { display: flex; align-items: flex-start; gap: 30px; }
 
@@ -83,14 +83,26 @@ p { margin-bottom: 1rem; }
 .page-creation .timeline-item::before { content: ''; position: absolute; left: -37px; top: 15px; width: 14px; height: 14px; background-color: var(--bg-color); border: 2px solid var(--fg-color); border-radius: 50%; z-index: 1; }
 .page-creation .timeline-title { font-size: 2rem; cursor: pointer; display: inline-block; padding: 5px 0; margin: 0; }
 .page-creation .timeline-item:hover > .timeline-title, .page-creation .timeline-item:focus-within > .timeline-title { background-color: var(--accent-color); color: var(--bg-color); }
-/* --- MODIFIED: The :hover and :focus-within for the preview have been removed. JS will now handle this. --- */
-.page-creation .timeline-preview { max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transform: translateY(-20px); transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s; border: 2px dashed var(--fg-color); margin-top: 10px; }
-/* --- NOTE: This rule below is now controlled by JS for click/tap events --- */
-/* .page-creation .timeline-item:hover .timeline-preview, .page-creation .timeline-item:focus-within .timeline-preview { max-height: 500px; opacity: 1; visibility: visible; transform: translateY(0); } */
-.page-creation .timeline-preview-content { display: flex; gap: 20px; padding: 20px; }
-.page-creation .timeline-preview-visual { flex: 0 0 40%; display: block; }
-.page-creation .timeline-preview-visual img { width: 100%; height: auto; display: block; border: 2px solid var(--fg-color); }
-.page-creation .timeline-preview-text { flex: 1; }
+.page-creation .timeline-preview { max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; transform: translateY(-20px); transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s; border: 2px dashed var(--fg-color); margin-top: 30px; /* MODIFIED: Increased space from 10px */ }
+
+.page-creation .timeline-preview-content {
+    padding: 20px;
+}
+.page-creation .timeline-preview-visual {
+    margin-bottom: 20px; 
+}
+.page-creation .timeline-preview-visual img { 
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+    display: block; 
+    border: 2px solid var(--fg-color); 
+    margin: 0 auto; 
+}
+.page-creation .timeline-preview-text {
+    text-align: center; 
+}
+
 .page-creation .timeline-preview-text h3 { margin-top: 0; }
 .page-creation .timeline-preview-text .btn { margin-top: 1rem; }
 .page-creation .archive-heading { margin-top: 80px; padding-top: 40px; border-top: 2px dashed var(--fg-color); }
@@ -115,8 +127,8 @@ p { margin-bottom: 1rem; }
 .two-col-panel .panel-item {
     border: 2px dashed var(--fg-color);
     padding: 20px;
-    display: flex; /* Added for alignment */
-    flex-direction: column; /* Added for alignment */
+    display: flex; 
+    flex-direction: column;
 }
 .two-col-panel.text-panel .panel-item {
     border: none;
@@ -179,7 +191,6 @@ p { margin-bottom: 1rem; }
 .showcase-transition-divider-small {
     height: 100px;
     margin: 70px 0;
-    /* --- UPDATED TO MATCH LARGE DIVIDER --- */
     background-image: url('../images/cholericsbackground.gif');
     background-size: 700px;
     background-repeat: repeat;
@@ -195,7 +206,7 @@ p { margin-bottom: 1rem; }
 .collapsible-trigger { cursor: pointer; user-select: none; position: relative; padding-right: 30px; }
 .collapsible-trigger::after { content: '[-]'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 2rem; transition: transform 0.3s; }
 .collapsible-trigger.is-collapsed::after { content: '[+]'; }
-.collapsible-content { max-height: 5000px; /* Start expanded */ overflow: hidden; transition: max-height 0.5s ease-in-out; padding-top: 1.5rem; }
+.collapsible-content { max-height: 5000px; overflow: hidden; transition: max-height 0.5s ease-in-out; padding-top: 1.5rem; }
 .collapsible-content.is-collapsed { max-height: 0; padding-top: 0; }
 
 .text-block { border: 2px dashed var(--fg-color); padding: 20px; margin-top: 25px; }
@@ -256,7 +267,6 @@ footer { text-align: center; padding: 20px 0; margin-top: 40px; border-top: 2px 
     .header-controls { position: static; transform: none; }
     .page-home .about-content { flex-direction: column; align-items: center; text-align: center; }
 
-    /* --- ADDED: MOBILE NAVIGATION WRAPPING --- */
     .nav-links-wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -266,5 +276,4 @@ footer { text-align: center; padding: 20px 0; margin-top: 40px; border-top: 2px 
     .nav-separator {
         display: none;
     }
-    /* --- END OF ADDED CODE --- */
 }

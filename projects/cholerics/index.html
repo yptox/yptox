@@ -48,7 +48,14 @@
     <main>
         <div class="container-wide">
             <div class="showcase-logo-container">
-                <video src="movingcholericslogo.webm" autoplay loop muted playsinline class="showcase-logo-video"></video>
+                <!-- MODIFIED FOR CROSS-BROWSER COMPATIBILITY -->
+                <video autoplay loop muted playsinline class="showcase-logo-video">
+                    <!-- Fallback for Safari (iOS, iPadOS, macOS) -->
+                    <source src="movingcholericslogo.mov" type="video/quicktime">
+                    <!-- Primary for Chrome, Firefox, Edge -->
+                    <source src="movingcholericslogo.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div class="showcase-video-container">
                 <div class="video-wrapper-responsive">
