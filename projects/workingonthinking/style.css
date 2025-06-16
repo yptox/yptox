@@ -1,0 +1,46 @@
+body {
+    background-color: #000000;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #F0F4FF;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../images/workingonthinkingbg.gif');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.content-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2000px;
+}
+
+.content-image {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+}
+
+.title-gif {
+    max-width: 850px;
+    margin-top: 600px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 100px 30px;
+    font-size: 14px;
+    color: rgba(240, 244, 255, 0.7);
+}
+
+.content-section:last-child {
+    margin-bottom: 200px;
+}
