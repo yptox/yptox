@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if this is the "I AGREE" button (not a close button)
             if (e.target.textContent.includes('AGREE')) {
                 // Open Panacea.io in new tab
-                window.open('https://panacea.io', '_blank', 'noopener,noreferrer');
+                window.open('https://yptox.com/projects/Panacea.co', '_blank', 'noopener,noreferrer');
             }
             cookieBanner.style.bottom = '-100px';
             setTimeout(() => { cookieBanner.style.bottom = '0'; }, 4000); // Slower return
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
             signupBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 // Open Panacea.io in new tab
-                window.open('https://panacea.io', '_blank', 'noopener,noreferrer');
+                window.open('https://yptox.com/projects/Panacea.co', '_blank', 'noopener,noreferrer');
                 // Hide the popup after signup
                 newsletterPopup.classList.remove('active');
             });
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 actionBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     // Open Panacea.io in new tab
-                    window.open('https://panacea.io', '_blank', 'noopener,noreferrer');
+                    window.open('https://yptox.com/projects/Panacea.co', '_blank', 'noopener,noreferrer');
                     // Remove the popup after click
                     e.target.closest('.popup-instance').remove();
                 });
