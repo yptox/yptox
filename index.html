@@ -62,102 +62,37 @@
                     <a href="projects/Twitter2/" class="btn">see more</a>
                 </div>
             </div>
-            <!DOCTYPE html>
-            <html lang="en">
+        </section>
+        <section id="about-me" class="about-section">
+            <div class="container">
+                <h2>> Ezra</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/EzraJohnston.jpg" alt="A photo of the site author"
+                            style="width: 100%; height: auto;">
+                    </div>
+                    <div class="about-text">
+                        <p>Ezra Johnston is a neat little freak. He would love to work with you.</p>
+                        <p>He currently studies Digital Media Design at RMIT University in Melbourne,
+                            Australia. He is experienced in video editing, web development, and game
+                            development. He is particularly interested in the future of interaction design.
+                            He has fear in his heart.</p>
+                        <p>He can be found on <a href="https://www.youtube.com/@yptox" target="_blank">YouTube</a>, <a
+                                href="https://xenolotl.itch.io/" target="_blank">itch.io</a>, and <a
+                                href="https://yptox.com/projects/Twitter2" target="_blank">Twitter 2</a>.
+                        </p>
+                        <p>If you'd like to get in touch, send an email to <a
+                                href="mailto:ezra@yptox.com">ezra@yptox.com</a>.</p>
 
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>yptox.com</title>
-                <link rel="icon" type="image/png" href="favicon.png">
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-                <link rel="stylesheet" href="css/style.css">
-                <meta name="description"
-                    content="Ezra Johnston's Portfolio - Digital Media Design, Video Editing, Web Development, and Game Development.">
-                <meta property="og:title" content="yptox.com - Ezra Johnston">
-                <meta property="og:description"
-                    content="Ezra Johnston's Portfolio - Digital Media Design, Video Editing, Web Development, and Game Development.">
-                <meta property="og:type" content="website">
-                <meta property="og:url" content="https://yptox.com/">
-                <meta property="og:image" content="https://yptox.com/images/EzraJohnston.jpg">
-                <meta name="description"
-                    content="Ezra Johnston's Portfolio - Digital Media Design, Video Editing, Web Development, and Game Development.">
-                <meta property="og:title" content="yptox.com - Ezra Johnston">
-                <meta property="og:description"
-                    content="Ezra Johnston's Portfolio - Digital Media Design, Video Editing, Web Development, and Game Development.">
-                <meta property="og:type" content="website">
-                <meta property="og:url" content="https://yptox.com/">
-                <meta property="og:image" content="https://yptox.com/images/EzraJohnston.jpg">
-                <script>
-                    (function () {
-                        const palettes = [{ name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' }];
-                        window.yptoxPalettes = palettes;
-                        function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
-                        let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
-                        if (currentTheme) { applyTheme(currentTheme); } else { const randomPalette = palettes[Math.floor(Math.random() * palettes.length)]; applyTheme(randomPalette); }
-                        document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('theme-loaded'); });
-                    })();
-                </script>
-            </head>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
+    <script src="js/script.js"></script>
+</body>
 
-            <body class="page-home">
-                <header id="header-placeholder"></header>
-                <main>
-                    <section id="featured-work" class="featured-work-section-full">
-                        <div class="container">
-                            <div class="featured-project-full">
-                                <div class="featured-visual-placeholder">
-                                    <img src="projects/cholerics/Cholerics video Thumbnail.png" alt="Cholerics Project"
-                                        style="width: 100%; height: auto;">
-                                </div>
-                                <h3>Cholerics</h3>
-                                <p>A narrative game concept showcase.</p>
-                                <a href="projects/cholerics/" class="btn">see more</a>
-                            </div>
-                            <div class="featured-project-full">
-                                <div class="featured-visual-placeholder">
-                                    <img src="images/Twitter2Thumbnail.png" alt="Twitter2 Project"
-                                        style="width: 100%; height: auto;">
-                                </div>
-                                <h3>Twitter 2</h3>
-                                <p>Elon Musk's revolutionary new incremental social media platform.</p>
-                                <a href="projects/Twitter2/" class="btn">see more</a>
-                            </div>
-                        </div>
-                    </section>
-                    <section id="about-me" class="about-section">
-                        <div class="container">
-                            <h2>> Ezra</h2>
-                            <div class="about-content">
-                                <div class="about-image">
-                                    <img src="images/EzraJohnston.jpg" alt="A photo of the site author"
-                                        style="width: 100%; height: auto;">
-                                </div>
-                                <div class="about-text">
-                                    <p>Ezra Johnston is a neat little freak. He would love to work with you.</p>
-                                    <p>He currently studies Digital Media Design at RMIT University in Melbourne,
-                                        Australia. He is experienced in video editing, web development, and game
-                                        development. He is particularly interested in the future of interaction design.
-                                        He has fear in his heart.</p>
-                                    <p>He can be found on <a href="https://www.youtube.com/@yptox"
-                                            target="_blank">YouTube</a>, <a href="https://xenolotl.itch.io/"
-                                            target="_blank">itch.io</a>, and <a
-                                            href="https://yptox.com/projects/Twitter2" target="_blank">Twitter 2</a>.
-                                    </p>
-                                    <p>If you'd like to get in touch, send an email to <a
-                                            href="mailto:ezra@yptox.com">ezra@yptox.com</a>.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </section>
-                </main>
-                <footer id="footer-placeholder"></footer>
-                <script src="js/components.js"></script>
-                <script src="js/script.js"></script>
-            </body>
-
-            </html>
+</html>
