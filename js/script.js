@@ -293,4 +293,22 @@ document.addEventListener('componentsLoaded', initSite);
 // Re-attach listeners if components are injected later (handled by componentsLoaded event)
 document.addEventListener('componentsLoaded', attachTransitionListeners);
 
+// --- FIX: Handle Back Button (bfcache) ---
+window.addEventListener('pageshow', (event) => {
+    // If loaded from bfcache OR if the body is stuck in the "off" state
+    if (event.persisted || document.body.classList.contains('crt-turn-off')) {
+        // Reset classes
+        document.body.classList.remove('crt-turn-off');
+        document.body.classList.remove('no-scroll');
+
+        // Re-trigger turn-on animation
+        document.body.classList.add('crt-turn-on');
+
+        // Clean up after animation
+        setTimeout(() => {
+            document.body.classList.remove('crt-turn-on');
+        }, 550);
+    }
+});
+
 // --- END OF FILE script.js ---
