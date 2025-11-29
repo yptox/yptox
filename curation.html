@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="description"
+        content="Curation - Ezra Johnston's Portfolio. A collection of music, thoughts, and inspirations.">
+    <meta property="og:title" content="Curation - yptox.com">
+    <meta property="og:description"
+        content="Curation - Ezra Johnston's Portfolio. A collection of music, thoughts, and inspirations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yptox.com/curation">
+    <meta property="og:image" content="https://yptox.com/images/EzraJohnston.jpg">
     <script>
-        (function() {
-            const palettes = [ { name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' } ];
+        (function () {
+            const palettes = [{ name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' }];
             window.yptoxPalettes = palettes;
             function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
             let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
@@ -20,107 +29,135 @@
         })();
     </script>
 </head>
+
 <body class="page-curation">
-    <header>
-        <div class="title-bar">
-            <div class="container">
-                <a href="index.html" class="title-link">
-                    <h1>ypt<span id="glitch-o-1">o</span>x.c<span id="glitch-o-2">o</span>m</h1>
-                </a>
-            </div>
-        </div>
-        <nav class="main-nav">
-             <div class="container">
-                <div class="nav-links-wrapper">
-                    <a href="/creation">Creation</a>
-                    <span class="nav-separator">|</span>
-                    <a href="/experimentation">Experimentation</a>
-                    <span class="nav-separator">|</span>
-                    <a href="/curation">Curation</a>
-                </div>
-                <div class="header-controls">
-                    <button id="random-theme-btn" class="theme-control-btn" aria-label="Randomize theme">[R]</button>
-                    <a href="index.html#about-me" class="theme-control-btn" aria-label="Scroll to about me section">[?]</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header id="header-placeholder"></header>
     <main>
         <div class="container">
             <div class="curation-layout">
 
                 <!-- Left Column: Posts -->
                 <div class="curation-posts">
-                    
+
+
+                    <div id="date-2025-11-28" class="date-anchor"></div>
+                    <article class="curated-post">
+                        <div class="post-date-header">
+                            <p>November 28, 2025</p>
+                        </div>
+                        <div class="post-content">
+                            <h3>Japan, Making Things, and Swimming In The pool</h3>
+                            <p>I like it</p>
+                        </div>
+                    </article>
+
+
                     <div id="date-2025-07-22" class="date-anchor"></div>
                     <article class="curated-post">
-                        <div class="post-date-header"><p>July 22, 2025</p></div>
+                        <div class="post-date-header">
+                            <p>July 22, 2025</p>
+                        </div>
                         <div class="post-content">
-                                <h3> Headlights by Alex G</h3>
-                            <img src="https://media.pitchfork.com/photos/683757a081d72f81ecd1304b/1:1/w_450%2Cc_limit/AlexG_Headlights_Cover.jpg" alt="headlights album cover" class="post-media-left">
-                            This album is full of warmth and honesty. Neither are new for Alex G but its never sounded quite so refined. To me this album is about accepting change, and the mixed emotions that can come with even the most positive of changes.
-                            This is his first album produced under a major label and the lyrics explicitly discuss this change, almost as if he's trying to apologize for selling out, or at least come to terms with himself about it. The low fidelity style of his older albums were always part of his appeal, but I don't feel his voice is lost in the layers of production.
-                            If anything this album seems more mature and honest. The other large change influencing the album is a distinct difference in lifestyle now that he's a father. If God Save the Animals was about becoming a father, Headlights is about accepting the change in lifestyle and maybe even mourning the loss of a previous identity. Good stuff. I like it. Some of my favourite tracks are Beam Me Up, Real Thing, and Far and Wide.
-                          
+                            <h3> Headlights by Alex G</h3>
+                            <img src="https://media.pitchfork.com/photos/683757a081d72f81ecd1304b/1:1/w_450%2Cc_limit/AlexG_Headlights_Cover.jpg"
+                                alt="headlights album cover" class="post-media-left">
+                            This album is full of warmth and honesty. Neither are new for Alex G but its never sounded
+                            quite so refined. To me this album is about accepting change, and the mixed emotions that
+                            can come with even the most positive of changes.
+                            This is his first album produced under a major label and the lyrics explicitly discuss this
+                            change, almost as if he's trying to apologize for selling out, or at least come to terms
+                            with himself about it. The low fidelity style of his older albums were always part of his
+                            appeal, but I don't feel his voice is lost in the layers of production.
+                            If anything this album seems more mature and honest. The other large change influencing the
+                            album is a distinct difference in lifestyle now that he's a father. If God Save the Animals
+                            was about becoming a father, Headlights is about accepting the change in lifestyle and maybe
+                            even mourning the loss of a previous identity. Good stuff. I like it. Some of my favourite
+                            tracks are Beam Me Up, Real Thing, and Far and Wide.
+
                         </div>
                     </article>
 
 
 
-                    
+
                     <div id="date-2025-06-26" class="date-anchor"></div>
                     <article class="curated-post">
-                        <div class="post-date-header"><p>June 26, 2025</p></div>
+                        <div class="post-date-header">
+                            <p>June 26, 2025</p>
+                        </div>
                         <div class="post-content">
                             <h3> YouTube music video comments</h3>
                             <img src="images/260625 blog.png" alt="youtube comments" class="post-media-left">
                             these are very special to me
-                          
+
                         </div>
                     </article>
 
 
                     <div id="date-2025-06-15" class="date-anchor"></div>
                     <article class="curated-post">
-                        <div class="post-date-header"><p>June 15, 2025</p></div>
+                        <div class="post-date-header">
+                            <p>June 15, 2025</p>
+                        </div>
                         <div class="post-content">
                             <h3> Mythological beauty by Big Thief</h3>
-                            <img src="https://e.snmc.io/i/600/w/2fa8235f7f6a209496d17b23d7f6e479/6483180/big-thief-mythological-beauty-Cover-Art.jpg" alt="Placeholder Image" class="post-media-left">
-                            
-                            <p>One of the reasons i wanted to start curating things i love is because i often have difficulty translating my feelings into words and i want to improve that. I really really love this song. It is very special and beautiful to me. It makes me sad and happy and mournful and hopeful. Her voice is really amazing. Lyrically and musically this song is almost perfectly addicting. I am clearly not quite there in terms of articulating myself. I like it a lot</p>
+                            <img src="https://e.snmc.io/i/600/w/2fa8235f7f6a209496d17b23d7f6e479/6483180/big-thief-mythological-beauty-Cover-Art.jpg"
+                                alt="Placeholder Image" class="post-media-left">
+
+                            <p>One of the reasons i wanted to start curating things i love is because i often have
+                                difficulty translating my feelings into words and i want to improve that. I really
+                                really love this song. It is very special and beautiful to me. It makes me sad and happy
+                                and mournful and hopeful. Her voice is really amazing. Lyrically and musically this song
+                                is almost perfectly addicting. I am clearly not quite there in terms of articulating
+                                myself. I like it a lot</p>
                         </div>
                     </article>
 
                     <div id="date-2025-06-13" class="date-anchor"></div>
                     <article class="curated-post">
-                        <div class="post-date-header"><p>June 13, 2025</p></div>
+                        <div class="post-date-header">
+                            <p>June 13, 2025</p>
+                        </div>
                         <div class="post-content">
                             <h3>7/11 Coffee</h3>
                             <p>
-                                Have you been to this place? It's incredible. The coffee is cheap and the oat milk is delicious and the walk from my apartment stops my brain from hurting. Let's all give this a go. I think we all need to give this a go.
-                                </p>
+                                Have you been to this place? It's incredible. The coffee is cheap and the oat milk is
+                                delicious and the walk from my apartment stops my brain from hurting. Let's all give
+                                this a go. I think we all need to give this a go.
+                            </p>
                         </div>
                     </article>
 
                     <div id="date-2025-06-12" class="date-anchor"></div>
                     <article class="curated-post">
-                        <div class="post-date-header"><p>June 12, 2025</p></div>
+                        <div class="post-date-header">
+                            <p>June 12, 2025</p>
+                        </div>
                         <div class="post-content">
                             <h3>The Beach Boys</h3>
                             <p>
-                                I was very upset to hear that Brian Wilson died today. I don't even know if he was doing this at all in like the last twenty years but I always kind of thought I might get to see him perform live. I've been listening to The Beach Boys all day, the first time in a few years I've done a deep dive into them. I really think they're the best pop band of all time. </p>
+                                I was very upset to hear that Brian Wilson died today. I don't even know if he was doing
+                                this at all in like the last twenty years but I always kind of thought I might get to
+                                see him perform live. I've been listening to The Beach Boys all day, the first time in a
+                                few years I've done a deep dive into them. I really think they're the best pop band of
+                                all time. </p>
                         </div>
                     </article>
-                    
-                
 
-                     <article class="curated-post">
-                        <div class="post-date-header"><p>June 10, 2025</p></div>
+
+
+                    <article class="curated-post">
+                        <div class="post-date-header">
+                            <p>June 10, 2025</p>
+                        </div>
                         <div class="post-content">
                             <h3>Sufjan Stevens</h3>
                             <p>
-                                It's going to be a SufJune Stevens. This means a June in which I listen to a lot of Sufjan Stevens. He recently rereleased Carrie & Lowell for its 10th Anniversary with a bunch of demos. Really love that album. Just beautiful poetic soft sad meaningful tunes. You have got to love it. The weather is perfect for melancholic melodies such as his.
-                                </p>
+                                It's going to be a SufJune Stevens. This means a June in which I listen to a lot of
+                                Sufjan Stevens. He recently rereleased Carrie & Lowell for its 10th Anniversary with a
+                                bunch of demos. Really love that album. Just beautiful poetic soft sad meaningful tunes.
+                                You have got to love it. The weather is perfect for melancholic melodies such as his.
+                            </p>
                         </div>
                     </article>
 
@@ -129,20 +166,22 @@
                 <!-- Right Column: Timeline Scroller -->
                 <aside class="timeline-scroller">
                     <div class="scroller-track">
-                        <a href="#date-2025-06-15" class="scroller-mark" style="top: 0%;"><span class="scroller-tooltip">13/6</span></a>
-                        <a href="#date-2025-06-13" class="scroller-mark" style="top: 33%;"><span class="scroller-tooltip">12/6</span></a>
-                        <a href="#date-2025-06-12" class="scroller-mark" style="top: 66%;"><span class="scroller-tooltip">11/6</span></a>
-                        <a href="#date-2025-06-10" class="scroller-mark" style="top: 100%;"><span class="scroller-tooltip">10/6</span></a>
+                        <a href="#date-2025-06-15" class="scroller-mark" style="top: 0%;"><span
+                                class="scroller-tooltip">13/6</span></a>
+                        <a href="#date-2025-06-13" class="scroller-mark" style="top: 33%;"><span
+                                class="scroller-tooltip">12/6</span></a>
+                        <a href="#date-2025-06-12" class="scroller-mark" style="top: 66%;"><span
+                                class="scroller-tooltip">11/6</span></a>
+                        <a href="#date-2025-06-10" class="scroller-mark" style="top: 100%;"><span
+                                class="scroller-tooltip">10/6</span></a>
                     </div>
                 </aside>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <p>© <span id="current-year"></span> I own nothing.</p>
-        </div>
-    </footer>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

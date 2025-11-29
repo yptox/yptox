@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Creation - Ezra Johnston's Portfolio. A timeline of projects and creative works.">
+    <meta property="og:title" content="Creation - yptox.com">
+    <meta property="og:description"
+        content="Creation - Ezra Johnston's Portfolio. A timeline of projects and creative works.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yptox.com/creation">
+    <meta property="og:image" content="https://yptox.com/images/EzraJohnston.jpg">
     <script>
-        (function() {
-            const palettes = [ { name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' } ];
+        (function () {
+            const palettes = [{ name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' }];
             window.yptoxPalettes = palettes;
             function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
             let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
@@ -20,37 +28,31 @@
         })();
     </script>
 </head>
+
 <body class="page-creation">
-    <header>
-        <div class="title-bar">
-            <div class="container">
-                <a href="index.html" class="title-link">
-                    <h1>ypt<span id="glitch-o-1">o</span>x.c<span id="glitch-o-2">o</span>m</h1>
-                </a>
-            </div>
-        </div>
-        <nav class="main-nav">
-             <div class="container">
-                <div class="nav-links-wrapper">
-                    <a href="/creation">Creation</a>
-                    <span class="nav-separator">|</span>
-                    <a href="/experimentation">Experimentation</a>
-                    <span class="nav-separator">|</span>
-                    <a href="/curation">Curation</a>
-                </div>
-                <div class="header-controls">
-                    <button id="random-theme-btn" class="theme-control-btn" aria-label="Randomize theme">[R]</button>
-                    <a href="index.html#about-me" class="theme-control-btn" aria-label="Scroll to about me section">[?]</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header id="header-placeholder"></header>
     <main>
         <div class="container">
             <div class="timeline-container">
-                
+
                 <!-- === YEAR 2025 === -->
                 <h2 class="timeline-year">2025</h2>
+
+                <div class="timeline-item" tabindex="0">
+                    <h3 class="timeline-title">> Panacea.co</h3>
+                    <div class="timeline-preview">
+                        <div class="timeline-preview-content">
+                            <div class="timeline-preview-visual">
+                                <img src="projects/Panacea.co/Panacea.co.png" alt="Panacea.co Project">
+                            </div>
+                            <div class="timeline-preview-text">
+                                <h3>Panacea.co</h3>
+                                <p>A groundbreaking wellness-focused e-commerce platform.</p>
+                                <a href="projects/Panacea.co/index.html" target="_blank" class="btn">Visit the site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="timeline-item" tabindex="0">
                     <h3 class="timeline-title">> Cholerics</h3>
@@ -61,7 +63,7 @@
                             </div>
                             <div class="timeline-preview-text">
                                 <h3>Cholerics</h3>
-                                <p>A showcase of Cholerics, a surreal narrative game concept.</p>
+                                <p>A surreal narrative game concept.</p>
                                 <a href="projects/cholerics" target="_blank" class="btn">Visit the site</a>
                             </div>
                         </div>
@@ -70,7 +72,7 @@
                 <div class="timeline-item" tabindex="0">
                     <h3 class="timeline-title">> Twitter 2</h3>
                     <div class="timeline-preview">
-                         <div class="timeline-preview-content">
+                        <div class="timeline-preview-content">
                             <div class="timeline-preview-visual">
                                 <img src="images/Twitter2Thumbnail.png" alt="Twitter 2 Concept">
                             </div>
@@ -84,34 +86,37 @@
                 </div>
 
                 <div class="timeline-item" tabindex="0">
-                     <h3 class="timeline-title">> Is this even real?</h3>
-                     <div class="timeline-preview">
+                    <h3 class="timeline-title">> Is this even real?</h3>
+                    <div class="timeline-preview">
                         <div class="timeline-preview-content">
-                           <div class="timeline-preview-visual">
-                               <img src="images/isthisevenrealThumbnail.png" alt="Is this even real?">
-                           </div>
-                           <div class="timeline-preview-text">
-                               <h3>Is this even real?</h3>
-                               <p>A showcase of an album my friend Gus recently released. Working on this site helped me develop the aesthetic of yptox.com.</p>
-                               <a href="https://yptox.github.io/assignment2MusicPlayer/" target="_blank" class="btn">Visit the site</a>
-                           </div>
-                       </div>
-                   </div>
+                            <div class="timeline-preview-visual">
+                                <img src="images/isthisevenrealThumbnail.png" alt="Is this even real?">
+                            </div>
+                            <div class="timeline-preview-text">
+                                <h3>Is this even real?</h3>
+                                <p>A showcase of an album my friend Gus recently released. Working on this site helped
+                                    me develop the aesthetic of yptox.com.</p>
+                                <a href="https://yptox.github.io/assignment2MusicPlayer/" target="_blank"
+                                    class="btn">Visit the site</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                
+
                 <div class="timeline-item" tabindex="0">
                     <h3 class="timeline-title">> My New Dance</h3>
-                     <div class="timeline-preview">
+                    <div class="timeline-preview">
                         <div class="timeline-preview-content">
                             <div class="timeline-preview-visual">
                                 <img src="images/MyNewDanceThumbnail.png" alt="My New Dance">
                             </div>
                             <div class="timeline-preview-text">
                                 <h3>My New Dance</h3>
-                                <p>I had a lot of old footage from projects I gave up on. This video collages around three years of shooting. My laptop died right after I uploaded this. I see it as a capstone on that period of my life.
-                                </p>
-                                <a href="https://youtu.be/lY03gR0eMhQ?si=W5lKcY5RzO2C3iRH" target="_blank" class="btn">Watch on YouTube</a>
+                                <p>This video collages around
+                                    three years of shooting projects I never completed.</p>
+                                <a href="https://youtu.be/lY03gR0eMhQ?si=W5lKcY5RzO2C3iRH" target="_blank"
+                                    class="btn">Watch on YouTube</a>
                             </div>
                         </div>
                     </div>
@@ -124,39 +129,41 @@
                 <div class="timeline-item" tabindex="0">
                     <h3 class="timeline-title">> Working on Thinking</h3>
                     <div class="timeline-preview">
-                       <div class="timeline-preview-content">
-                          <div class="timeline-preview-visual">
-                              <img src="images/workingonthinkingThumnnail.png" alt="Working on Thinking">
-                          </div>
-                          <div class="timeline-preview-text">
-                              <h3>Working on Thinking</h3>
-                              <p>A series of gifs that explore the concept of a glitch in relation
-                                to art and technology. The piece documents a future AI system struggling to create art and understand human feeling.</p>
-                              <a href="projects/workingonthinking" target="_blank" class="btn">View the piece</a>
-                          </div>
-                      </div>
-                  </div>
-               </div>
-               
+                        <div class="timeline-preview-content">
+                            <div class="timeline-preview-visual">
+                                <img src="images/workingonthinkingThumnnail.png" alt="Working on Thinking">
+                            </div>
+                            <div class="timeline-preview-text">
+                                <h3>Working on Thinking</h3>
+                                <p>A series of gifs that explore the concept of a "glitch" in relation
+                                    to art and technology.</p>
+                                <a href="projects/workingonthinking" target="_blank" class="btn">View the piece</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="timeline-item" tabindex="0">
                     <h3 class="timeline-title">> Melbourne Museum: Insight</h3>
                     <div class="timeline-preview">
-                       <div class="timeline-preview-content">
-                          <div class="timeline-preview-visual">
-                              <img src="images/MelbourneMuseumThumbnail.png" alt="Melbourne Museum Insight">
-                          </div>
-                          <div class="timeline-preview-text">
-                              <h3>Melbourne Museum: Insight</h3>
-                              <p>An advertisement for an app & exhibition concept for the Melbourne Museum. I led a team of 4 to create this piece.</p>
-                              <a href="https://www.youtube.com/watch?v=hIdKfLLmKNU" target="_blank" class="btn">Watch the ad on YouTube</a>
-                          </div>
-                      </div>
-                  </div>
-               </div>
+                        <div class="timeline-preview-content">
+                            <div class="timeline-preview-visual">
+                                <img src="images/MelbourneMuseumThumbnail.png" alt="Melbourne Museum Insight">
+                            </div>
+                            <div class="timeline-preview-text">
+                                <h3>Melbourne Museum: Insight</h3>
+                                <p>An advertisement for an app & exhibition concept for the Melbourne Museum. I led a
+                                    team of 4 to create this piece.</p>
+                                <a href="https://www.youtube.com/watch?v=hIdKfLLmKNU" target="_blank" class="btn">Watch
+                                    the ad on YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-                
-               <div class="timeline-item" tabindex="0">
+
+                <div class="timeline-item" tabindex="0">
                     <h3 class="timeline-title">> Incrementelligence</h3>
                     <div class="timeline-preview">
                         <div class="timeline-preview-content">
@@ -166,7 +173,8 @@
                             <div class="timeline-preview-text">
                                 <h3>Incrementelligence</h3>
                                 <p>An incremental game about the rise of surveillance capitalism.</p>
-                                <a href="https://xenolotl.itch.io/incrementelligence" target="_blank" class="btn">Play on itch.io - desktop only</a>
+                                <a href="https://xenolotl.itch.io/incrementelligence" target="_blank" class="btn">Play
+                                    on itch.io - desktop only</a>
                             </div>
                         </div>
                     </div>
@@ -174,27 +182,27 @@
                 <div class="timeline-item" tabindex="0">
                     <h3 class="timeline-title">> Framework</h3>
                     <div class="timeline-preview">
-                       <div class="timeline-preview-content">
-                          <div class="timeline-preview-visual">
-                              <img src="images/FrameworkThumbnail.png" alt="Framework">
-                          </div>
-                          <div class="timeline-preview-text">
-                              <h3>Framework</h3>
-                              <p>A video collage responding to the theme of "The extraordinary in the ordinary". I directed, filmed, and edited the majority of this piece.</p>
-                              <a href="https://youtu.be/e0c-pCEEJxI?si=iRRaUTFD2iR0MXPD" target="_blank" class="btn">Watch on YouTube</a>
-                          </div>
-                      </div>
-                  </div>
-               </div>
+                        <div class="timeline-preview-content">
+                            <div class="timeline-preview-visual">
+                                <img src="images/FrameworkThumbnail.png" alt="Framework">
+                            </div>
+                            <div class="timeline-preview-text">
+                                <h3>Framework</h3>
+                                <p>A video collage responding to the theme of "The extraordinary in the ordinary". I
+                                    directed, filmed, and edited the majority of this piece.</p>
+                                <a href="https://youtu.be/e0c-pCEEJxI?si=iRRaUTFD2iR0MXPD" target="_blank"
+                                    class="btn">Watch on YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div> <!-- end .timeline-container -->
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <p>© <span id="current-year"></span> I own nothing.</p>
-        </div>
-    </footer>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - System Failure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #0000AA;
+            /* BSOD Blue */
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: 'VT323', monospace;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background-color: #FFFFFF;
+            color: #0000AA;
+            padding: 0 10px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .error-code {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        a {
+            color: #FFFFFF;
+            text-decoration: underline;
+            font-size: 1.5rem;
+        }
+
+        a:hover {
+            background-color: #FFFFFF;
+            color: #0000AA;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SYSTEM FAILURE</h1>
+    <p>A fatal exception 404 has occurred at 0028:C0011E36 in VXD VMM(01) + 00010E36.</p>
+    <p>The current application will be terminated.</p>
+
+    <div class="error-code">
+        * Press any key to terminate the current application.<br>
+        * Press CTRL+ALT+DEL again to restart your computer. You will lose any unsaved information in all applications.
+    </div>
+
+    <p class="blink">_</p>
+
+    <p>
+        <a href="/">[ Return to System ]</a>
+    </p>
+
+    <script>
+        // Redirect on any key press
+        document.addEventListener('keydown', () => {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+
+</html>

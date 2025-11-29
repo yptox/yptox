@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="description"
+        content="Experimentation - Ezra Johnston's Portfolio. Work in progress, sketches, and experiments.">
+    <meta property="og:title" content="Experimentation - yptox.com">
+    <meta property="og:description"
+        content="Experimentation - Ezra Johnston's Portfolio. Work in progress, sketches, and experiments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yptox.com/experimentation">
+    <meta property="og:image" content="https://yptox.com/images/EzraJohnston.jpg">
     <script>
-        (function() {
-            const palettes = [ { name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' } ];
+        (function () {
+            const palettes = [{ name: 'Matrix', bg: '#0D0208', fg: '#00FF41', accent: '#008F11' }, { name: 'Fallout', bg: '#1a3b33', fg: '#94e16b', accent: '#358a55' }, { name: 'Amber', bg: '#2E2522', fg: '#FFB800', accent: '#D18700' }, { name: 'Cyberpunk', bg: '#0d0221', fg: '#bfffbc', accent: '#ff00c1' }, { name: 'Paper', bg: '#f5f5dc', fg: '#3d2b1f', accent: '#8b4513' }, { name: 'Deep Blue', bg: '#001f3f', fg: '#7FDBFF', accent: '#0074D9' }, { name: 'Dracula', bg: '#282a36', fg: '#f8f8f2', accent: '#bd93f9' }, { name: 'Nord', bg: '#2E3440', fg: '#D8DEE9', accent: '#88C0D0' }, { name: 'Solarized Dark', bg: '#002b36', fg: '#839496', accent: '#268bd2' }, { name: 'Solarized Light', bg: '#fdf6e3', fg: '#657b83', accent: '#2aa198' }, { name: 'Gruvbox', bg: '#282828', fg: '#ebdbb2', accent: '#fabd2f' }, { name: 'Monokai', bg: '#272822', fg: '#F8F8F2', accent: '#A6E22E' }, { name: 'CGA', bg: '#000000', fg: '#00AAAA', accent: '#FF55FF' }, { name: 'DOS', bg: '#0000AA', fg: '#FFFFFF', accent: '#FFFF55' }, { name: 'Hacker', bg: '#000000', fg: '#00FF00', accent: '#228B22' }, { name: 'Sunset', bg: '#1e192d', fg: '#ffc995', accent: '#ff7f50' }, { name: 'Ocean', bg: '#0f1c2b', fg: '#bde4ee', accent: '#20b2aa' }, { name: 'Rosé Pine', bg: '#191724', fg: '#e0def4', accent: '#eb6f92' }, { name: 'Vaporwave', bg: '#0f0426', fg: '#00f5ff', accent: '#ff3cff' }, { name: 'Coffee', bg: '#211720', fg: '#d4bda1', accent: '#c48888' }, { name: 'Forest', bg: '#1e2d2f', fg: '#cdd4b9', accent: '#93b393' }, { name: 'Crimson', bg: '#1c1c1c', fg: '#ff4747', accent: '#ac0000' }, { name: 'Arctic', bg: '#f0f8ff', fg: '#333a45', accent: '#6592af' }, { name: 'Slate', bg: '#2f343f', fg: '#c1c8d8', accent: '#7884a3' }, { name: 'Terminal Basic', bg: '#0a0a0a', fg: '#fcfcfc', accent: '#777777' }, { name: 'Gold', bg: '#111111', fg: '#FFD700', accent: '#bda000' }];
             window.yptoxPalettes = palettes;
             function applyTheme(theme) { const root = document.documentElement; root.style.setProperty('--bg-color', theme.bg); root.style.setProperty('--fg-color', theme.fg); root.style.setProperty('--accent-color', theme.accent); localStorage.setItem('yptoxUserTheme', JSON.stringify(theme)); }
             let currentTheme; try { currentTheme = JSON.parse(localStorage.getItem('yptoxUserTheme')); } catch (e) { currentTheme = null; }
@@ -19,125 +28,150 @@
         })();
     </script>
 </head>
+
 <body class="page-experimentation">
-    <header>
-        <div class="title-bar">
-            <div class="container">
-                <a href="index.html" class="title-link">
-                    <h1>ypt<span id="glitch-o-1">o</span>x.c<span id="glitch-o-2">o</span>m</h1>
-                </a>
-            </div>
-        </div>
-        <nav class="main-nav">
-             <div class="container">
-                <div class="nav-links-wrapper">
-                    <a href="/creation">Creation</a>
-                    <span class="nav-separator">|</span>
-                    <a href="/experimentation">Experimentation</a>
-                    <span class="nav-separator">|</span>
-                    <a href="/curation">Curation</a>
-                </div>
-                <div class="header-controls">
-                    <button id="random-theme-btn" class="theme-control-btn" aria-label="Randomize theme">[R]</button>
-                    <a href="index.html#about-me" class="theme-control-btn" aria-label="Scroll to about me section">[?]</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header id="header-placeholder"></header>
     <main>
         <div class="container">
             <div class="experimentation-layout">
 
                 <!-- Left Column: WIPs -->
                 <div class="wip-column">
-                    <div class="current-wip-showcase">
-                        <h2>Current WIP:</h2>
-                     <div class="featured-visual-placeholder">
-                            <img src="projects/site development/wireframes/all frames.jpg" style="width: 100%; height: auto; display: block;" alt="yptox.com wireframes">
-                        </div>
-                        <h3>yptox.com</h3>
-                        <p>Been meaning to get this site going for a long time. These are some wireframes I drew up a while ago. I followed them pretty closely
-                            in the final layout of the site. Things are far from complete, but I think it's good enough to go live. Hope you enjoy.
-                        </p>
-                     <!--   <a href="projects/site development" target="_blank" class="btn">Follow Progress</a> -->
-                    </div>
+                    <div class="wip-grid">
+                        <!-- Item 1: yptox.com -->
+                        <article class="wip-item">
+                            <a href="projects/yptox.html"
+                                style="text-decoration: none; color: inherit; display: block;">
+                                <div class="wip-visual">
+                                    <img src="projects/site development/wireframes/all frames.jpg"
+                                        alt="yptox.com wireframes">
+                                </div>
+                                <div class="wip-content">
+                                    <h3>yptox.com</h3>
+                                    <div class="wip-meta">
+                                        <span class="wip-tag">Web</span>
+                                        <span class="wip-status">Live</span>
+                                    </div>
+                                    <p>Been meaning to get this site going for a long time. These are some wireframes I
+                                        drew
+                                        up a while ago. Things are far from complete, but I think it's good enough to go
+                                        live.</p>
+                                </div>
+                            </a>
+                        </article>
 
-                    <!--
-                    <div class="wip-carousel-section">
-                        <h3>Specific Project Processes</h3>
-                        <div id="wip-carousel" class="wip-carousel-container">
-                            <div class="wip-carousel-track">
-                                
-                                <div class="wip-carousel-item">
-                                    <div class="wip-carousel-visual"><p>Asset Study 1</p></div>
-                                    <h4>Writing</h4>
-                                    <p>love to do it</p>
-                                </div>
-                                
-                                <div class="wip-carousel-item">
-                                    <div class="wip-carousel-visual"><p>g</p></div>
-                                    <h4>generative stuff</h4>
-                                    <p>open touchdesigner</p>
-                                </div>
-                                
-                                <div class="wip-carousel-item">
-                                    <div class="wip-carousel-visual"><p>Audio Test</p></div>
-                                    <h4>walking around</h4>
-                                    <p>i need to go outside</p>
-                                </div>
+                        <!-- Item 2: Placeholder -->
+                        <article class="wip-item">
+                            <div class="wip-visual placeholder-visual">
+                                <span>Slingr</span>
                             </div>
-                            <button class="carousel-btn prev" id="carousel-prev"><</button>
-                            <button class="carousel-btn next" id="carousel-next">></button>
-                        </div>
+                            <div class="wip-content">
+                                <h3>Slingr</h3>
+                                <p>Working on making a mobile game that is fun and not evil. So far it is a little bit
+                                    fun and a little bit evil.</p>
+                            </div>
+                        </article>
+
+                        <!-- Item 3: Placeholder -->
+                        <article class="wip-item">
+                            <div class="wip-visual placeholder-visual">
+                                <span>How it feels to swim in the pool</span>
+                            </div>
+                            <div class="wip-content">
+                                <h3>How it feels to swim in the pool</h3>
+                                <p>you wouldn't believe me if i told you</p>
+                            </div>
+                        </article>
+
+                        <!-- Item 4: Placeholder -->
+                        <article class="wip-item">
+                            <div class="wip-visual placeholder-visual">
+                                <span>3d model dump kaleidoscope</span>
+                            </div>
+                            <div class="wip-content">
+                                <h3>3d model dump kaleidoscope</h3>
+                                <p>i'm working on my modelling skills. i've been putting all the garbage i make into an
+                                    experience
+                                    which organises them into kaleidoscopic patterns and rotations around the camera.
+                                    idk what im going to do with it</p>
+                            </div>
+                        </article>
                     </div>
-                    -->
                 </div>
 
                 <!-- Right Column: Work Log -->
                 <aside class="work-log-column">
-                    <h2>Work Log</h2>
-                    <div class="work-log-feed">
-                        <article class="log-entry">
-                            <h4>2025-09-08</h4>
-                            <p>I did nothing for some time. but now i am back and i have been doing many, many things. Nothing to show you yet. but im telling you. things are happening.
-                            </p>
-                        </article>
-                        <article class="log-entry">
-                            <h4>2025-06-16</h4>
-                            <p>Finished up the Creation & Experimentation pages. Pretty happy with everything as a whole. 
-                            Need to make sure everything looks alright on mobile, but I think I'm basically done with the desktop version.
-                            </p>
-                        </article>
-                        <article class="log-entry">
-                            <h4>2025-06-13</h4>
-                            <p>The site is up, its not done, but it is up. hello to all the people in the world.</p>
-                        </article>
-                        <article class="log-entry">
-                            <h4>2025-06-12</h4>
-                            <p>twitter 2 is done and we are just yeah doing it </p>
-                        </article>
-                        <article class="log-entry">
-                            <h4>2025-06-10</h4>
-                            <p>did a lot of work on everything forever</p>
-                        </article>
-                         <article class="log-entry">
-                            <h4>2025-06-09</h4>
-                            <p>hoo bo</p>
-                        </article>
-                         <article class="log-entry">
-                            <h4>2025-06-07</h4>
-                            <p>its nothing.</p>
-                        </article>
+                    <h2 class="section-title">System Log</h2>
+                    <div class="work-log-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">user@yptox:~/logs</span>
+                        </div>
+                        <div class="work-log-feed">
+
+                            <article class="log-entry">
+                                <span class="log-date">[2025-11-28]</span>
+                                <span class="log-msg">finally updating the website. it's needed a bit of love for a
+                                    while especially considering
+                                    i keep giving my stupid business card to people which links to a not very
+                                    interesting place. but here it is
+                                    and hopefully you find it very impressive. i need to also add some stuff to the
+                                    creation section but i don't really
+                                    know how I'm going to display them. One of them is a unity game that is kind of shit
+                                    and i don't really want to put on here
+                                    and the other one is interesting but needs a lot of context and is currently hosted
+                                    on a python server that i'm paying for and
+                                    i don't want to be paying for it. i might just have to start hosting a server in my
+                                    apartment
+                                </span>
+                            </article>
+                            <article class="log-entry">
+                                <span class="log-date">[2025-09-08]</span>
+                                <span class="log-msg">I did nothing for some time. but now i am back and i have been
+                                    doing many, many things. Nothing to show you yet. but im telling you. things are
+                                    happening.</span>
+                            </article>
+                            <article class="log-entry">
+                                <span class="log-date">[2025-06-16]</span>
+                                <span class="log-msg">Finished up the Creation & Experimentation pages. Pretty happy
+                                    with everything as a whole. Need to make sure everything looks alright on mobile,
+                                    but I think I'm basically done with the desktop version.</span>
+                            </article>
+                            <article class="log-entry">
+                                <span class="log-date">[2025-06-13]</span>
+                                <span class="log-msg">The site is up, its not done, but it is up. hello to all the
+                                    people in the world.</span>
+                            </article>
+                            <article class="log-entry">
+                                <span class="log-date">[2025-06-12]</span>
+                                <span class="log-msg">twitter 2 is done and we are just yeah doing it</span>
+                            </article>
+                            <article class="log-entry">
+                                <span class="log-date">[2025-06-10]</span>
+                                <span class="log-msg">did a lot of work on everything forever</span>
+                            </article>
+                            <article class="log-entry">
+                                <span class="log-date">[2025-06-09]</span>
+                                <span class="log-msg">hoo bo</span>
+                            </article>
+                            <article class="log-entry">
+                                <span class="log-date">[2025-06-07]</span>
+                                <span class="log-msg">its nothing.</span>
+                            </article>
+                            <div class="terminal-cursor">_</div>
+                        </div>
                     </div>
                 </aside>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <p>© <span id="current-year"></span> I own nothing.</p>
-        </div>
-    </footer>
+    <footer id="footer-placeholder"></footer>
+    <script src="js/components.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -4,7 +4,7 @@
 // This prevents a function from being called too frequently, such as on window resize.
 function debounce(func, wait = 20) {
     let timeout;
-    return function(...args) {
+    return function (...args) {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
             func.apply(this, args);
@@ -14,14 +14,14 @@ function debounce(func, wait = 20) {
 
 
 // The theme logic is handled by a script in the <head> to prevent FOUC.
-document.addEventListener('DOMContentLoaded', () => {
-
+// --- INITIALIZATION WRAPPER ---
+function initSite() {
     const randomThemeBtn = document.getElementById('random-theme-btn');
 
     // --- DUAL GLITCHING TITLE EFFECT ---
     const glitchElement1 = document.getElementById('glitch-o-1');
     const glitchElement2 = document.getElementById('glitch-o-2');
-    
+
     if (glitchElement1) {
         setInterval(() => {
             glitchElement1.textContent = Math.random() > 0.5 ? 'o' : '0';
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const preview = item.querySelector('.timeline-preview');
                 title.setAttribute('aria-expanded', 'false');
                 preview.setAttribute('aria-hidden', 'true');
-                
+
                 title.addEventListener('click', (e) => {
                     e.preventDefault();
                     const isExpanded = title.getAttribute('aria-expanded') === 'true';
@@ -117,13 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (wipCarousel) {
         const track = wipCarousel.querySelector('.wip-carousel-track');
         const items = Array.from(track.children);
-        const nextButton = document.getElementById('carousel-next'); 
+        const nextButton = document.getElementById('carousel-next');
         const prevButton = document.getElementById('carousel-prev');
-        
+
         if (track && items.length > 0 && nextButton && prevButton) {
             let currentIndex = 0;
             const totalItems = items.length;
-            
+
             const moveToSlide = (index) => {
                 if (!items[0]) return;
                 const itemWidth = items[0].getBoundingClientRect().width;
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             nextButton.addEventListener('click', () => { moveToSlide((currentIndex + 1) % totalItems); });
             prevButton.addEventListener('click', () => { moveToSlide((currentIndex - 1 + totalItems) % totalItems); });
-            
+
             // Add this carousel's update function to our list for resize handling
             carouselsToUpdateOnResize.push(() => moveToSlide(currentIndex));
         }
@@ -149,9 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextButton = carouselElement.querySelector('.carousel-btn.next');
         const prevButton = carouselElement.querySelector('.carousel-btn.prev');
         const textBlurbsContainer = document.getElementById(carouselElement.dataset.blurbsId);
-        
+
         if (!track || slides.length === 0 || !nextButton || !prevButton || !textBlurbsContainer) return;
-        
+
         const blurbs = Array.from(textBlurbsContainer.children);
         if (blurbs.length === 0) return;
 
@@ -170,36 +170,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         nextButton.addEventListener('click', () => { updateContent((currentIndex + 1) % totalSlides); });
         prevButton.addEventListener('click', () => { updateContent((currentIndex - 1 + totalSlides) % totalSlides); });
-        
+
         // Add this carousel's update function to our list for resize handling
         carouselsToUpdateOnResize.push(() => updateContent(currentIndex));
         updateContent(0); // Initial setup
     }
     initializeSyncedCarousel('concept-carousel');
     initializeSyncedCarousel('development-carousel');
-    
+
     // --- OPTIMIZATION: Single debounced resize handler for all carousels ---
     window.addEventListener('resize', debounce(() => {
         carouselsToUpdateOnResize.forEach(updateFn => updateFn());
     }, 200)); // 200ms delay is usually a good value
 
-    
+
     // --- REFACTOR: COLLAPSIBLE SECTION LOGIC ---
     // This logic assumes sections start closed by default via CSS (`max-height: 0`).
     const triggers = document.querySelectorAll('.collapsible-trigger');
-    
+
     triggers.forEach(trigger => {
         // Assume it starts collapsed as per CSS. Add the class for the icon state.
         trigger.classList.add('is-collapsed');
         const content = trigger.nextElementSibling;
         if (content) {
-             content.style.maxHeight = null; // Ensure it's closed initially
+            content.style.maxHeight = null; // Ensure it's closed initially
         }
 
-        trigger.addEventListener('click', function() {
+        trigger.addEventListener('click', function () {
             this.classList.toggle('is-collapsed');
             const content = this.nextElementSibling;
-            
+
             // Check if content is open (has a maxHeight set)
             if (content.style.maxHeight) {
                 // If it's open, close it
@@ -210,6 +210,87 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+}
+
+// --- CRT TRANSITION LOGIC ---
+function handleTransition(e) {
+    const link = e.currentTarget;
+    const href = link.getAttribute('href');
+
+    // Ignore if opening in new tab, hash links on same page, or external links
+    if (link.target === '_blank' || !href) {
+        return;
+    }
+
+    // Resolve absolute URLs for comparison
+    const linkUrl = new URL(link.href, window.location.origin);
+    const currentUrl = new URL(window.location.href);
+
+    // Check if external link
+    if (linkUrl.hostname !== window.location.hostname) {
+        return;
+    }
+
+    // Normalize paths to handle / vs /index.html
+    const normalize = (p) => p.replace(/\/index\.html$/, '/').replace(/\/$/, '');
+
+    const linkPath = normalize(linkUrl.pathname);
+    const currentPath = normalize(currentUrl.pathname);
+
+    // If it's the same page and has a hash, just let default behavior happen (scroll)
+    if (linkPath === currentPath && linkUrl.hash) {
+        return;
+    }
+
+    // If it's just a hash link (starts with #), ignore
+    if (href.startsWith('#')) {
+        return;
+    }
+
+    e.preventDefault();
+
+    // Add class to body to trigger CSS animation and lock scroll
+    document.body.classList.remove('crt-turn-on');
+    document.body.classList.add('crt-turn-off');
+    document.body.classList.add('no-scroll');
+
+    setTimeout(() => {
+        window.location.href = href;
+    }, 450); // Match CSS animation duration
+}
+
+// Attach to all internal links
+function attachTransitionListeners() {
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.removeEventListener('click', handleTransition); // Prevent duplicate listeners
+        link.addEventListener('click', handleTransition);
+    });
+}
+
+// Run on load
+document.body.classList.add('crt-turn-on');
+document.body.classList.add('no-scroll');
+// Remove class after animation to clean up
+setTimeout(() => {
+    document.body.classList.remove('crt-turn-on');
+    document.body.classList.remove('no-scroll');
+
+    // Handle hash scrolling after animation (since no-scroll blocked it)
+    if (window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}, 550);
+
+attachTransitionListeners();
+
+// Listen for the custom event from components.js
+document.addEventListener('componentsLoaded', initSite);
+
+// Re-attach listeners if components are injected later (handled by componentsLoaded event)
+document.addEventListener('componentsLoaded', attachTransitionListeners);
 
 // --- END OF FILE script.js ---
