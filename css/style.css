@@ -905,3 +905,32 @@ body {
 .crt-turn-on {
     animation: turn-on 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
+/* Hotfix for experimentation layout overflow */
+.page-experimentation .work-log-column {
+    min-width: 0 !important;
+    max-width: 400px !important;
+}
+
+/* Hotfix for log image size */
+.log-msg img {
+    max-height: 80px !important;
+    width: auto !important;
+    transition: max-height 0.3s ease;
+}
+
+.log-msg img:hover {
+    max-height: 400px !important;
+}
+
+/* Final adjustment for log image size */
+.log-msg img {
+    max-height: none !important;
+    width: 90% !important;
+    max-width: 90% !important;
+    margin-left: 0;
+    cursor: default;
+}
+
+.log-msg img:hover {
+    max-height: none !important;
+}
