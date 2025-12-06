@@ -524,26 +524,6 @@ p {
 
 /* --- EXPERIMENTATION PAGE LAYOUT --- */
 .page-experimentation .experimentation-layout {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.page-experimentation .wip-column {
-    flex: 2;
-    min-width: 0;
-}
-
-.page-experimentation .work-log-column {
-    flex: 1;
-    position: sticky;
-    top: 100px;
-    /* Stick to top when scrolling */
-}
-
-/* WIP Grid */
-.wip-grid {
-    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
 }
@@ -905,6 +885,7 @@ body {
 .crt-turn-on {
     animation: turn-on 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
+
 /* Hotfix for experimentation layout overflow */
 .page-experimentation .work-log-column {
     min-width: 0 !important;
