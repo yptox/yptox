@@ -519,30 +519,6 @@ p {
 .subsection-title {
     font-size: 2.2rem;
     margin-top: 60px;
-    margin-bottom: 20px;
-}
-
-/* --- EXPERIMENTATION PAGE LAYOUT --- */
-.page-experimentation .experimentation-layout {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.wip-item {
-    border: 2px dashed var(--fg-color);
-    padding: 15px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.wip-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 0px var(--fg-color);
-    border-style: solid;
-}
-
-.wip-visual {
-    width: 100%;
     aspect-ratio: 16 / 9;
     border: 1px solid var(--fg-color);
     margin-bottom: 15px;

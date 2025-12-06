@@ -11,7 +11,6 @@ import { PALETTES } from '../utils/colors'
 import type { PaletteName } from '../utils/colors'
 import Background from './Background'
 import GenerativeAudio from './GenerativeAudio'
-import ActiveModelsOverlay from './ActiveModelsOverlay'
 import Starfield from './Starfield'
 
 const SPAWN_RANGE = 60
@@ -215,8 +214,7 @@ export default function FloatingUniverse({ assets }: FloatingUniverseProps) {
 
             </EffectComposer>
 
-            {/* UI Overlay */}
-            <ActiveModelsOverlay activeAssets={renderableAssets} />
+
 
             {/* Starfield with Dynamic Color */}
             <Starfield color={currentColor} />
